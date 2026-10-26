@@ -1,6 +1,6 @@
 {
-  "version": "2.10.2",
-  "pkg": "releases/SEMPP-MIDI-CONTROL-2.10.2.pkg",
-  "sha256": "aca6b943ef6937d529c430ea9674fc597a5abf38ca402cb50b1b9e8f4137e975",
-  "notes": "- Nueva imagen con la marca Jelly Vice: icono de la app, cabecera del plugin e instalador.\n- Instalador más sencillo y claro."
+  "version": "2.10.3",
+  "pkg": "releases/SEMPP-MIDI-CONTROL-2.10.3.pkg",
+  "sha256": "7a7edb17f96afa83d9ce3d5d081db12d7f2422f7d5c462e36be45c9c211f6705",
+  "notes": "- Play del iPad igual que el de Ableton: arranca desde el marcador de inicio.\n- Si cambias de marcador con el transporte parado, el siguiente Play empieza en ese marcador.\n- Reinicia Ableton después de actualizar."
 }
