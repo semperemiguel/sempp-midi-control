@@ -1,6 +1,6 @@
 {
-  "version": "2.10.3",
-  "pkg": "releases/SEMPP-MIDI-CONTROL-2.10.3.pkg",
-  "sha256": "7a7edb17f96afa83d9ce3d5d081db12d7f2422f7d5c462e36be45c9c211f6705",
-  "notes": "- Play del iPad igual que el de Ableton: arranca desde el marcador de inicio.\n- Si cambias de marcador con el transporte parado, el siguiente Play empieza en ese marcador.\n- Reinicia Ableton después de actualizar."
+  "version": "2.11.0",
+  "pkg": "releases/SEMPP-MIDI-CONTROL-2.11.0.pkg",
+  "sha256": "af523fe0276664f376ad1d24ae30e37034661db5ca16cdb558ac8705064b9d31",
+  "notes": "- Las partes de la canción del iPad se pueden tocar: parado, coloca la reproducción en esa parte; sonando, entra en la siguiente frontera de la cuantización global, a tempo.\n- Nuevo permiso por vista: «Ir a una parte».\n- Reinicia Ableton después de actualizar."
 }
