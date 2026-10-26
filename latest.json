@@ -1,6 +1,6 @@
 {
-  "version": "2.10.1",
-  "pkg": "releases/SEMPP-MIDI-CONTROL-2.10.1.pkg",
-  "sha256": "74e4dcccaac0a34b00e8df9716032345014fe8dad407eebb4df0c619c713242b",
-  "notes": "- Controles táctiles en el iPad: Tune/Bypass, Loop, Play/Stop y saltar de marcador (mantener pulsado para confirmar).\n- Bloqueo de los iPads desde el Mac.\n- Vistas por persona: Director musical, Técnico y Banda.\n- Idiomas: español e inglés.\n- Temas visuales y tamaño de letra.\n- Actualizaciones automáticas desde este repositorio.\n\nDespués de actualizar, reinicia Ableton Live."
+  "version": "2.10.2",
+  "pkg": "releases/SEMPP-MIDI-CONTROL-2.10.2.pkg",
+  "sha256": "aca6b943ef6937d529c430ea9674fc597a5abf38ca402cb50b1b9e8f4137e975",
+  "notes": "- Nueva imagen con la marca Jelly Vice: icono de la app, cabecera del plugin e instalador.\n- Instalador más sencillo y claro."
 }
