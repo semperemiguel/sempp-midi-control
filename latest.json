@@ -1,6 +1,6 @@
 {
-  "version": "2.11.0",
-  "pkg": "releases/SEMPP-MIDI-CONTROL-2.11.0.pkg",
-  "sha256": "af523fe0276664f376ad1d24ae30e37034661db5ca16cdb558ac8705064b9d31",
-  "notes": "- Las partes de la canción del iPad se pueden tocar: parado, coloca la reproducción en esa parte; sonando, entra en la siguiente frontera de la cuantización global, a tempo.\n- Nuevo permiso por vista: «Ir a una parte».\n- Reinicia Ableton después de actualizar."
+  "version": "2.11.1",
+  "pkg": "releases/SEMPP-MIDI-CONTROL-2.11.1.pkg",
+  "sha256": "e8db6e38639875231162a79b649549523e7a879777475983462c2b92e718c458",
+  "notes": "- Nuevo modo táctil del iPad en Ajustes → iPad: mantener pulsado, un toque o bloqueado."
 }
