@@ -26,7 +26,7 @@
 /* stage del hero: la ventana se endereza con el scroll */
 #s-hero{height:210vh}
 #s-hero .pin{flex-direction:column;justify-content:center;padding-top:60px}
-#s-hero .appbox{width:min(1100px,92vw,calc((100svh - 300px) * 1.486))}
+#s-hero .appbox{width:min(1100px,92vw,calc((100svh - 380px) * 1.486))}
 .stage{perspective:1600px;width:100%;display:flex;justify-content:center}
 .tilt{transform-style:preserve-3d;will-change:transform;
   transform:translateY(calc((1 - var(--p,0)) * 8vh)) rotateX(calc((1 - var(--e,0)) * 26deg)) scale(calc(.78 + var(--e,0) * .22))}
@@ -154,10 +154,10 @@
 .xstage{perspective:2200px;height:76vh;display:flex;align-items:center;justify-content:center;min-width:0}
 .xstage .appbox{width:min(760px,52vw)}
 .xpgrid>*{min-width:0}
-.xp{transform-style:preserve-3d;transform:rotateX(calc(var(--x,0)*54deg)) rotateZ(calc(var(--x,0)*-32deg)) scale(calc(1 - var(--x,0)*.18))}
+.xp{transform-style:preserve-3d;transform:translateY(calc(var(--x,0)*6vh)) rotateX(calc(var(--x,0)*55deg)) rotateZ(calc(var(--x,0)*-26deg)) scale(calc(1 - var(--x,0)*.2))}
 .xp .app{transform-style:preserve-3d;background:transparent;border-color:transparent;box-shadow:none;overflow:visible}
 .xp .app::before{content:"";position:absolute;inset:0;border:3px solid var(--ink);border-radius:22px;background:#F2F0EB radial-gradient(circle at 1px 1px,rgba(63,63,63,.08) 1px,transparent 1.4px) 0 0/16px 16px;box-shadow:14px 14px 0 var(--ink);opacity:calc(1 - var(--x,0)*.55)}
-.xp .ly{transform:translateZ(calc(var(--x,0) * var(--z) * 2.4px));transition:outline-color .3s,filter .3s}
+.xp .ly{transform:translateZ(calc(var(--x,0) * var(--z) * 1.15px));transition:outline-color .3s,filter .3s}
 .xp .ly.hl{filter:drop-shadow(0 0 0 transparent);outline:4px solid var(--coral);outline-offset:4px;border-radius:18px}
 .xlist{list-style:none;display:grid;gap:10px}
 .xlist li{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:2.5px solid transparent;border-radius:16px;opacity:.35;transition:all .35s}
@@ -319,3 +319,6 @@
   .xstage{height:34vh}
   .xlist b{font-size:16px}.xlist li i{width:24px;height:24px;font-size:13px}
 }
+.xp .appbox{transform-style:preserve-3d}
+#s-hero .hxsub{margin-top:8vh}
+@media (max-width:620px){.xstage{margin-top:7vh;height:30vh}}

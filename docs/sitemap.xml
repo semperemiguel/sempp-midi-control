@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://sempp.miguelsempere.es/</loc><lastmod>2026-11-02</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sempp.miguelsempere.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sempp.miguelsempere.es/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sempp.miguelsempere.es/en/"/></url>
+  <url><loc>https://sempp.miguelsempere.es/en/</loc><lastmod>2026-11-02</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sempp.miguelsempere.es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sempp.miguelsempere.es/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sempp.miguelsempere.es/en/"/></url>
+  <url><loc>https://sempp.miguelsempere.es/manual.html</loc><lastmod>2026-11-02</lastmod><priority>0.6</priority></url>
+  <url><loc>https://sempp.miguelsempere.es/historial.html</loc><lastmod>2026-11-02</lastmod><priority>0.4</priority></url>
+  <url><loc>https://sempp.miguelsempere.es/aviso-legal.html</loc><lastmod>2026-11-02</lastmod><priority>0.1</priority></url>
+</urlset>
