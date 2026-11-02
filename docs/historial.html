@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historial de SEMPP</title>
+<meta name="description" content="Todas las funciones, mejoras, arreglos y servicios de SEMPP MIDI CONTROL, desde el primer Tune Controller hasta la 3.0.">
+<meta property="og:title" content="Historial de SEMPP MIDI CONTROL">
+<meta property="og:description" content="De un puente MIDI para el Auto-Tune a un sistema de directo completo: todo lo que ha ido llegando, versión a versión.">
+<link rel="canonical" href="https://sempp.miguelsempere.es/historial.html">
+<meta name="theme-color" content="#F2F0EB">
+<link rel="icon" href="img/icon.png">
+<!--FONTS-->
+<style>
+@font-face{font-family:"Chewy";src:url(fonts/chewy-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+:root{--cream:#F2F0EB;--paper:#FBFAF6;--ink:#3F3F3F;--ink-2:#6B6966;--ink-3:#A3A09A;--coral:#FF6666;--mint:#40E0D0;--teal:#087F7C;--sky:#A9ECEC;--butter:#FFE08A;--pink:#F7B8C6;--lav:#B79CF2;--dot:rgba(63,63,63,.09);--on-chip:#3F3F3F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#22201D;--paper:#2D2A26;--ink:#ECE8E0;--ink-2:#C2BDB4;--ink-3:#8E8980;--teal:#5FD9CF;--dot:rgba(236,232,224,.07)}}
+:root[data-theme="dark"]{--cream:#22201D;--paper:#2D2A26;--ink:#ECE8E0;--ink-2:#C2BDB4;--ink-3:#8E8980;--teal:#5FD9CF;--dot:rgba(236,232,224,.07)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font:500 17px/1.6 "Hanken Grotesk",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 1.4px);background-size:18px 18px}
+a{color:inherit}
+.w{max-width:1000px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--cream) 92%,transparent);backdrop-filter:blur(8px);border-bottom:2.5px solid var(--ink)}
+nav .w{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:50%;border:2.5px solid var(--ink);box-shadow:2px 2px 0 var(--coral)}
+.brand b{font:400 27px/1 "Chewy",sans-serif;color:var(--coral)}
+.brand small{display:block;font:800 9.5px/1 "Hanken Grotesk",sans-serif;letter-spacing:.2em;margin-top:3px}
+nav .links{margin-left:auto;display:flex;gap:18px;align-items:center;font:800 14px/1 "Hanken Grotesk",sans-serif}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--coral)}
+.tag{font:800 12px/1 "Hanken Grotesk",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+header{padding:56px 0 26px}
+h1{font:400 64px/1 "Chewy",sans-serif;color:var(--coral);text-shadow:3px 3px 0 rgba(63,63,63,.14);margin:14px 0 16px}
+.lead{font:600 20px/1.5 "Hanken Grotesk",sans-serif;color:var(--ink-2);max-width:46ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.stats div{background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink);padding:14px 16px}
+.stats b{display:block;font:400 40px/1 "Chewy",sans-serif}
+.stats span{font:800 11px/1.3 "Hanken Grotesk",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.stats .s1 b{color:var(--teal)}.stats .s2 b{color:#C99A12}.stats .s3 b{color:var(--coral)}.stats .s4 b{color:#3A9BB0}
+.filters{position:sticky;top:64px;z-index:5;padding:14px 0;background:color-mix(in srgb,var(--cream) 94%,transparent);backdrop-filter:blur(6px);display:flex;flex-wrap:wrap;gap:8px}
+.chip{height:36px;padding:0 14px;border:2.5px solid var(--ink);border-radius:999px;background:var(--paper);box-shadow:2px 2px 0 var(--ink);color:var(--ink);
+  font:800 13px/1 "Hanken Grotesk",sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.chip i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.chip:active{transform:translate(2px,2px);box-shadow:none}
+.era{position:relative;padding:22px 0 10px 34px}
+.era::before{content:"";position:absolute;left:11px;top:0;bottom:0;border-left:3px dashed var(--ink-3)}
+.era h2{position:relative;font:400 36px/1.05 "Chewy",sans-serif;margin:0 0 4px}
+.era h2::before{content:"";position:absolute;left:-33px;top:6px;width:22px;height:22px;border-radius:50%;border:3px solid var(--ink);background:var(--butter);box-shadow:2px 2px 0 var(--ink)}
+.era .when{font:800 12px/1 "Hanken Grotesk",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.era p.intro{font:600 15.5px/1.5 "Hanken Grotesk",sans-serif;color:var(--ink-2);margin:8px 0 14px;max-width:62ch}
+.ver{background:var(--paper);border:2.5px solid var(--ink);border-radius:18px;box-shadow:4px 4px 0 var(--ink);padding:14px 18px 10px;margin:0 0 14px}
+.ver h3{display:flex;align-items:baseline;gap:10px;font:400 24px/1.1 "Chewy",sans-serif;margin-bottom:6px}
+.ver h3 small{font:800 12px/1 "Hanken Grotesk",sans-serif;color:var(--ink-3);letter-spacing:.06em}
+.ver ul{list-style:none}
+.ver li{display:grid;grid-template-columns:92px 1fr;gap:12px;align-items:start;padding:7px 0;border-top:1.5px dashed color-mix(in srgb,var(--ink-3) 60%,transparent);font:600 15px/1.45 "Hanken Grotesk",sans-serif}
+.ver li:first-child{border-top:0}
+.b{justify-self:start;padding:3px 9px;border:2px solid var(--ink);border-radius:999px;font:800 10.5px/1.3 "Hanken Grotesk",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--on-chip);margin-top:1px}
+.t-f{background:var(--mint)}.t-m{background:var(--butter)}.t-a{background:var(--pink)}.t-s{background:var(--sky)}
+.chip .t-f,.chip .t-m,.chip .t-a,.chip .t-s{display:inline-block}
+.hide{display:none!important}
+.next{margin:30px 0 10px;background:var(--paper);border:2.5px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);padding:24px 26px}
+.next h2{font:400 34px/1.05 "Chewy",sans-serif;margin:8px 0 8px}
+.next p{font:600 16px/1.5 "Hanken Grotesk",sans-serif;color:var(--ink-2)}
+footer{padding:34px 0 50px;text-align:center;font:600 14px/1.5 "Hanken Grotesk",sans-serif;color:var(--ink-2)}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}h1{font-size:46px}nav .links .hm{display:none}}
+@media (max-width:480px){.ver li{grid-template-columns:1fr;gap:4px}.era{padding-left:26px}.era::before{left:8px}.era h2::before{left:-25px;width:18px;height:18px}h1{font-size:40px}.era h2{font-size:30px}}
+</style>
+</head>
+<body>
+<nav><div class="w">
+  <a class="brand" href="index.html"><img src="img/avatar.jpg" alt=""><span><b>Sempp</b><small>MIDI CONTROL</small></span></a>
+  <div class="links"><a class="hm" href="index.html#funciones">Funciones</a><a href="manual.html">Manual</a><a href="index.html">Inicio</a></div>
+</div></nav>
+
+<header><div class="w">
+  <span class="tag">Historial de versiones</span>
+  <h1>De un puente MIDI a un sistema de directo</h1>
+  <p class="lead">Todo lo que ha ido llegando a SEMPP MIDI CONTROL, desde el primer Tune Controller para el Auto-Tune hasta la 3.0: funciones, mejoras, arreglos y servicios.</p>
+  <div class="stats" id="stats"></div>
+</div></header>
+
+<div class="w">
+  <div class="filters" role="group" aria-label="Filtrar por tipo">
+    <button class="chip" data-t="all" aria-pressed="true">Todo</button>
+    <button class="chip" data-t="f" aria-pressed="false"><i class="t-f"></i>Funciones</button>
+    <button class="chip" data-t="m" aria-pressed="false"><i class="t-m"></i>Mejoras</button>
+    <button class="chip" data-t="a" aria-pressed="false"><i class="t-a"></i>Arreglos</button>
+    <button class="chip" data-t="s" aria-pressed="false"><i class="t-s"></i>Servicios</button>
+  </div>
+  <main id="log"></main>
+  <div class="next">
+    <span class="tag">Lo que viene</span>
+    <h2>Y después de la 3.0</h2>
+    <p>Licencias en tres modelos (MIDI, Ableton y setlist, o todo), firma de Apple, web y manual en inglés y una pestaña de prompter para las letras, sincronizada con la sesión de Ableton.</p>
+  </div>
+</div>
+<footer>SEMPP MIDI CONTROL · hecho por Miguel Sempere · © 2026</footer>
+
+<script>
+var T={f:"Función",m:"Mejora",a:"Arreglo",s:"Servicio"};
+var ERAS=[
+ {n:"Los orígenes",w:"Verano de 2026",i:"Antes de SEMPP hubo un dispositivo de Max for Live y un script para mover el Auto-Tune desde Ableton.",v:[
+  ["SemperCue","Max for Live",[["f","Displays flotantes con el nombre del clip, marcadores, pistas ON/OFF y loop."],["a","Ventanas que no abrían y ajustes que no se guardaban: la idea pasó a un script Python, mucho más estable."]]],
+  ["Tune Controller","autotune_midi.py",[["f","Puente MIDI por el bus IAC del Mac hacia UAD Console: tonalidad, escala, retune y el resto del Auto-Tune de la Apollo, desde Ableton."],["f","Bypass del Auto-Tune por Program Change."]]]]},
+ {n:"SEMPP 1.x y 2.x",w:"Hasta el 27 de octubre de 2026",i:"El script se convierte en una app con instalador, interfaz tipo plugin y vista en el iPad.",v:[
+  ["1.x – 2.9","",[["s","App con instalador, servicio que arranca con el Mac y puerto MIDI virtual propio."],["f","Enrutado por canal MIDI: cada canal controla un Auto-Tune o se reenvía a buses IAC para luces y visuales."],["f","Interfaz tipo plugin y vista de directo flotante."],["f","Script SEMPP para Ableton y visor de textos (letras y notas desde los clips)."],["f","Vista en el iPad por la red local, sin internet, y loop de Ableton visible."],["m","iPad sin retraso: de preguntar cada poco a una conexión en directo (WebSocket) que solo manda el último estado."],["a","Conexiones rechazadas, datos retenidos en Safari y iPads antiguos que no ejecutaban el código."]]],
+  ["2.10.1","26 oct",[["f","Controles táctiles en el iPad: Tune, Loop, Play/Stop y marcadores."],["f","Bloqueo de todos los iPads desde el Mac y vistas por persona."],["f","Español e inglés, temas y tamaño de letra."],["s","Actualizaciones automáticas."]]],
+  ["2.10.2","",[["m","Imagen Jelly: icono, cabecera e instalador."],["s","Instalador propio con el diseño de SEMPP."]]],
+  ["2.10.3","",[["a","El Play del iPad funciona como el de Ableton y respeta un marcador colocado con el transporte parado."]]],
+  ["2.11","27 oct",[["f","Partes de la canción tocables en el iPad, con saltos a tempo."],["f","Modo táctil del iPad: mantener pulsado, un toque o bloqueado."]]]]},
+ {n:"La 3.0 toma forma",w:"27 y 28 de octubre de 2026",i:"Setlist, tiempos, transporte propio y una ventana para el directo.",v:[
+  ["Beta 1","27 oct",[["f","Pestaña SETLIST: cada localizador es una canción; ordenar, quitar y elegir qué pasa al acabar (seguir, encadenar o parar)."],["f","Cuenta atrás de la canción, lo que queda de show y a qué hora acaba. Pestaña ABLETON a pantalla completa."],["f","Ventana propia, asistente de primer arranque, informe de incidencias y cambio de canción desde el iPad."],["a","«Coloco una canción, doy Play y arranca otra»: SEMPP vigila a Ableton y corrige al instante."],["s","Construcción automática del instalador en cada versión."]]],
+  ["Beta 2 y 3","",[["f","Barra de transporte fija abajo, «Compás y pulso» y «Lo que viene»."],["a","Reloj del show estable, sin saltos."],["s","Etiqueta de beta visible en el instalador y en la app."]]],
+  ["Beta 4","28 oct",[["f","Vista de directo con clics a través y opacidad a tu gusto; compás y pulso en el iPad."],["f","▶ por canción en el setlist del iPad."],["s","Manual con capturas numeradas y esquemas."],["a","Play, Stop y Play ya no arrancan otra canción."]]],
+  ["Beta 4.1","",[["f","Click (solo) y Artist Ref (mute) en el Mac y en el iPad del director."],["m","Se llama SEMPP MIDI CONTROL en el Dock."],["a","Permisos del iPad que volvían atrás; botones del iPad que ahora responden al instante."]]],
+  ["Beta 5 – 5.4","28 y 29 oct",[["m","Ajustes en seis pestañas y engranaje de la vista de directo siempre visible y arrastrable."],["m","Partes con colores claros y setlist del iPad fluido, con ▶/■ y Fijar."],["a","Al dar Play ya no suenan unas décimas de la canción anterior."],["s","Prueba automática con más de 170 comprobaciones antes de cada versión."],["a","Textos legibles en todas las vistas, sin palabras partidas."]]]]},
+ {n:"Afinando el directo",w:"29 de octubre de 2026",i:"Un día de pruebas en directo real: transporte como en Ableton, vúmetro, selector de tonos, PIN y mucho detalle.",v:[
+  ["Beta 5.5","",[["f","Vúmetro de la voz en el Mac y en el iPad del técnico: amarillo desde −12 dB, rojo desde −3 dB, CLIP y SIN SEÑAL."],["m","Elegir una parte funciona como un marcador."],["a","Si te mueves por los marcadores en Ableton, manda Ableton."]]],
+  ["Beta 5.6","",[["f","Logo animado que lleva a la web."],["m","Estado de Console, MIDI y Ableton en tres puntos discretos."],["a","Ningún texto cortado con «…»."]]],
+  ["Beta 5.7 – 5.9","",[["m","Play y Stop como la barra espaciadora de Ableton: Stop no mueve nada y Play arranca en la canción o la parte colocada."],["m","Anterior y siguiente con los localizadores nativos de Ableton: salto a tempo con el destino a la vista."],["a","Tonalidad y escala enteras en el iPad; el polo de TUNE ya no parpadea."]]],
+  ["Beta 6 y 6.1","",[["f","Partes de la canción en SETLIST, pulsables."],["f","Compases que faltan para la siguiente parte en los iPad."],["f","Tamaño de la ventana del plugin a elegir."],["s","Los errores del iPad se ven en pantalla y llegan al informe."],["a","SEMPP respeta los clips de «stop y siguiente marcador» de la sesión."]]],
+  ["Beta 7","",[["f","Tres vistas del setlist, como en el Finder: lista, compacta y tarjetas."],["f","Selector de tonalidad en un piano y de escala con todas las del Auto-Tune, en español."],["f","Aviso de versión nueva con sus novedades: actualizar ahora o más tarde."],["m","Panel de TUNE con menús que se alternan: Actividad y Canales MIDI."]]],
+  ["Beta 7.1","",[["f","PIN de acceso para los iPad."],["f","Quién está conectado, en el panel de TUNE."],["f","Un botón esconde todas las instrucciones de uso."],["a","Relojes largos del setlist enteros también en Safari."]]]]}
+];
+var log=document.getElementById("log"),cnt={f:0,m:0,a:0,s:0},nv=0,h="";
+function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+ERAS.forEach(function(e){h+='<section class="era"><span class="when">'+esc(e.w)+'</span><h2>'+esc(e.n)+'</h2><p class="intro">'+esc(e.i)+'</p>';
+  e.v.forEach(function(v){nv++;h+='<article class="ver"><h3>'+esc(v[0])+(v[1]?' <small>'+esc(v[1])+'</small>':'')+'</h3><ul>';
+    v[2].forEach(function(it){cnt[it[0]]++;h+='<li data-t="'+it[0]+'"><span class="b t-'+it[0]+'">'+T[it[0]]+'</span><span>'+esc(it[1])+'</span></li>'});h+='</ul></article>'});h+='</section>'});
+log.innerHTML=h;
+document.getElementById("stats").innerHTML=[["s1",cnt.f,"Funciones"],["s2",cnt.m,"Mejoras"],["s3",cnt.a,"Arreglos"],["s4",cnt.s,"Servicios"]].map(function(s){return '<div class="'+s[0]+'"><b>'+s[1]+'</b><span>'+s[2]+'</span></div>'}).join("");
+document.querySelectorAll(".chip").forEach(function(b){b.onclick=function(){var t=b.getAttribute("data-t");
+  document.querySelectorAll(".chip").forEach(function(c){c.setAttribute("aria-pressed",String(c===b))});
+  document.querySelectorAll(".ver li").forEach(function(li){li.classList.toggle("hide",t!=="all"&&li.getAttribute("data-t")!==t)});
+  document.querySelectorAll(".ver").forEach(function(a){a.classList.toggle("hide",!a.querySelector("li:not(.hide)"))});
+  document.querySelectorAll(".era").forEach(function(s){s.classList.toggle("hide",!s.querySelector(".ver:not(.hide)"))})}});
+</script>
+</body>
+</html>
