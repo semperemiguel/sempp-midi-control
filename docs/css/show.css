@@ -221,10 +221,10 @@
 .dev .frame img{border-radius:12px}
 .dev .lbl{margin-top:10px;text-align:center;font:400 22px/1 "Chewy"}
 .dev .lbl small{display:block;font:800 11px/1.2 "Hanken Grotesk";letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
-.d1{left:0;top:2%;transform:translate(calc((1 - var(--b2,0)) * -60vw),0) rotate(-4deg)}
-.d2{right:0;top:2%;transform:translate(calc((1 - var(--b3,0)) * 60vw),0) rotate(4deg)}
-.d3{left:50%;bottom:-8%;transform:translate(-50%,calc((1 - var(--b4,0)) * 70vh))}
-.d3{width:min(260px,24vw)}
+.dv1{left:0;top:2%;transform:translate(calc((1 - var(--b2,0)) * -60vw),0) rotate(-4deg)}
+.dv2{right:0;top:2%;transform:translate(calc((1 - var(--b3,0)) * 60vw),0) rotate(4deg)}
+.dv3{left:50%;bottom:-8%;transform:translate(-50%,calc((1 - var(--b4,0)) * 70vh))}
+.dv3{width:min(260px,24vw)}
 .wifi{position:absolute;inset:0;pointer-events:none}
 .wifi path{fill:none;stroke:var(--teal);stroke-width:3;vector-effect:non-scaling-stroke;stroke-dasharray:8 9;stroke-linecap:round;animation:dash 1s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-34}}
@@ -304,7 +304,7 @@
   .piano{height:70px}
   .arr .ruler{margin-left:64px}.trk>b{width:64px;font-size:9px}.ph{left:calc(64px + 14px + (100% - 64px - 28px) * var(--ph,0))}
   .flow{grid-template-columns:repeat(4,1fr);gap:5px}.node{font-size:10px;padding:7px 4px}.node small{display:none}
-  .dev{width:42vw}.d3{width:40vw}.pinpad,.lock{display:none}
+  .dev{width:42vw}.dv3{width:40vw}.pinpad,.lock{display:none}
   .bstage .center{width:84vw;top:52%}
   .stats{grid-template-columns:1fr 1fr}.extras{grid-template-columns:1fr}
   #s-tune .pin,#s-set .pin,#s-xp .pin{padding-top:72px}
@@ -364,7 +364,7 @@ h2{letter-spacing:-.04em}
 .dt:nth-child(4n+2) i{background:var(--mint)}.dt:nth-child(4n+3) i{background:var(--pink)}.dt:nth-child(4n+4) i{background:var(--sky)}
 .dt b{font:800 17px/1.2 var(--display);letter-spacing:-.02em;color:var(--ink)}
 .dt span{font:600 14px/1.45 "Hanken Grotesk",sans-serif;color:var(--ink-2)}
-body[data-env=stage] [data-env=stage] .dt{box-shadow:6px 6px 0 rgba(0,0,0,.55),0 24px 60px -20px rgba(255,214,170,.18)}
+body[data-env=stage] section[data-env=stage] .dt{box-shadow:6px 6px 0 rgba(0,0,0,.55),0 24px 60px -20px rgba(255,214,170,.18)}
 
 /* ===== hoja de ruta ===== */
 .road{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;align-items:stretch}
@@ -412,3 +412,81 @@ body[data-env=stage] [data-env=stage] .dt{box-shadow:6px 6px 0 rgba(0,0,0,.55),0
 .vu.dip{animation:vudip .5s ease}
 @keyframes vudip{0%{filter:none}20%{filter:brightness(.85) saturate(.4)}80%{filter:brightness(.85) saturate(.4)}100%{filter:none}}
 .cliphint{font:600 13px/1.4 "Hanken Grotesk";color:var(--s-fg2,#55534F)}
+
+/* ===== versión móvil cuidada ===== */
+.nav .cs{display:none}
+@media (max-width:620px){
+  .nav .w{gap:10px;height:60px}
+  .brand img{width:34px;height:34px}.brand b{font-size:23px}.brand small{font-size:8px}
+  .nav .links .lang{display:inline-flex}
+  .nav .links .lang a,.nav .links .lang span{padding:5px 8px;font-size:11px}
+  .nav .cl{display:none}.nav .cs{display:inline}
+  .nav .btn.sm{min-height:34px;padding:0 14px;font-size:13px}
+
+  /* portada */
+  .hx{padding-top:30px}
+  .hx .pill{font-size:11px;padding:6px 12px;margin-bottom:16px}
+  .hx h1 .k{font-size:17px;margin-top:16px}
+  .hx .cta{flex-direction:column;align-items:center;gap:10px}
+  .hx .cta .btn{width:min(320px,100%)}
+  .hx .note{font-size:12px;max-width:300px;margin:16px auto 0}
+  #s-hero{height:150vh}
+  #s-hero .pin{padding-top:56px}
+  #s-hero .appbox{width:calc(100vw - 24px)}
+  #s-hero .hxsub{margin-top:5vh;padding:0 20px}
+  .tilt{transform:translateY(calc((1 - var(--p,0)) * 4vh)) rotateX(calc((1 - var(--e,0)) * 22deg)) scale(calc(.9 + var(--e,0) * .1))}
+
+  /* Auto-Tune */
+  #s-tune .steptxt h2{font-size:26px}
+  #s-tune .lede{font-size:15px}
+  .clip{font-size:10px;padding:4px 5px;text-align:center}
+  .at{padding:12px}
+
+  /* setlist */
+  .srow{grid-template-columns:24px 1fr 42px 86px;padding:0 12px}
+  .srow .grip,.srow .hr,.srow .eye{display:none}
+  .srow .nm{font-size:13.5px;text-overflow:ellipsis}
+  .srow .md{font-size:10.5px;padding:5px 8px;justify-self:end}
+  .sl{padding:14px}
+  #s-set .steptxt h2{font-size:26px}
+
+  /* equipo */
+  #s-band .pin{align-items:flex-start;padding-top:72px}
+  #s-band .mid{font-size:30px}
+  #s-band .lede{font-size:14.5px}
+  .bstage{height:60vh;margin-top:2vh}
+  .bstage .center{width:88vw;top:58%}
+  .dev{width:44vw}
+  .dv1{left:-2px;top:0}.dv2{right:-2px;top:0}
+  .dv3{width:46vw;bottom:-14%}
+  .dev .frame{padding:6px;border-radius:14px}
+  .dev .lbl{font-size:14px;margin-top:6px}.dev .lbl small{font-size:9px}
+  .wifi{display:none}
+
+  /* monitorización */
+  .vu .col{height:36px!important}
+  .dbs{margin:8px 10px 0}
+
+  /* comparativa en tarjetas */
+  table.cmp,table.cmp tbody,table.cmp tr,table.cmp td{display:block;width:100%}
+  table.cmp{border:0;box-shadow:none;background:none;overflow:visible}
+  table.cmp thead{display:none}
+  table.cmp tr{background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink);margin-bottom:14px;overflow:hidden}
+  table.cmp td{border:0;padding:10px 16px}
+  table.cmp td:first-child{width:100%;font:800 17px/1.2 var(--display);letter-spacing:-.02em;padding-top:14px}
+  table.cmp td:nth-child(2)::before,table.cmp td:nth-child(3)::before{content:attr(data-l);display:block;font:800 10.5px/1.2 "Hanken Grotesk";letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+  table.cmp td:nth-child(3){padding-bottom:14px}
+
+  /* licencias */
+  .mini .mh span{font-size:10.5px;letter-spacing:.02em;padding:7px 0}
+  .lic>div{padding:20px!important}
+  .extras{grid-template-columns:1fr 1fr;gap:12px}
+  .extras>div:nth-child(3),.extras>div:nth-child(4){grid-column:1/-1}
+  .plan .price{font-size:44px}
+
+  /* lista de espera */
+  .wl{padding:24px 18px}
+  form.join{padding:18px}
+  form.join .btn{width:100%;font-size:15px}
+  .faq summary{font-size:16px;padding:16px 52px 16px 18px}
+}

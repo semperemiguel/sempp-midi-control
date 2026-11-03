@@ -3,6 +3,7 @@
   'use strict';
   var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var EN = document.documentElement.lang === 'en';
+  var NARROW = window.innerWidth < 620;
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var clamp = function (v, a, b) { return Math.max(a === undefined ? 0 : a, Math.min(b === undefined ? 1 : b, v)); };
@@ -103,15 +104,15 @@
     { s: .33, e: .58, key: 0, sc: 0, c: '#FFE08A' },
     { s: .64, e: .97, key: 6, sc: 2, c: '#A9ECEC' }];
   var CT = [
-    { s: .14, e: .3, rt: 10, c: '#D9CCFA', t: 'Retune 10' },
-    { s: .44, e: .6, rt: 45, c: '#D9CCFA', t: 'Retune 45' },
-    { s: .68, e: .8, byp: true, c: '#FF9C9C', t: 'PC 1 · Bypass' },
-    { s: .86, e: .97, byp: false, c: '#C9F2A0', t: 'PC 0 · On' }];
+    { s: .14, e: .3, rt: 10, c: '#D9CCFA', t: 'Retune 10', s2: 'RT 10' },
+    { s: .44, e: .6, rt: 45, c: '#D9CCFA', t: 'Retune 45', s2: 'RT 45' },
+    { s: .68, e: .8, byp: true, c: '#FF9C9C', t: 'PC 1 · Bypass', s2: 'PC 1' },
+    { s: .86, e: .97, byp: false, c: '#C9F2A0', t: 'PC 0 · On', s2: 'PC 0' }];
   var tune = { el: $('#s-tune') };
   if (tune.el) {
     var lk = $('#ln-key'), lt = $('#ln-tune');
-    CK.forEach(function (c) { var d = document.createElement('div'); d.className = 'clip'; d.style.cssText = 'left:' + c.s * 100 + '%;width:' + (c.e - c.s) * 100 + '%;background:' + c.c; d.textContent = 'Key ' + KEYS[c.key] + ' · ' + T.scales[c.sc]; lk.appendChild(d); c.d = d; });
-    CT.forEach(function (c) { var d = document.createElement('div'); d.className = 'clip'; d.style.cssText = 'left:' + c.s * 100 + '%;width:' + (c.e - c.s) * 100 + '%;background:' + c.c; d.textContent = c.t; lt.appendChild(d); c.d = d; });
+    CK.forEach(function (c) { var d = document.createElement('div'); d.className = 'clip'; d.style.cssText = 'left:' + c.s * 100 + '%;width:' + (c.e - c.s) * 100 + '%;background:' + c.c; d.textContent = NARROW ? KEYS[c.key] + ['', 'm', ' chr'][Math.min(c.sc, 2)] : 'Key ' + KEYS[c.key] + ' · ' + T.scales[c.sc]; lk.appendChild(d); c.d = d; });
+    CT.forEach(function (c) { var d = document.createElement('div'); d.className = 'clip'; d.style.cssText = 'left:' + c.s * 100 + '%;width:' + (c.e - c.s) * 100 + '%;background:' + c.c; d.textContent = NARROW ? c.s2 : c.t; lt.appendChild(d); c.d = d; });
     var pn = $('#piano'), html = '', wi = 0, BL = { 1: 1, 3: 1, 6: 1, 8: 1, 10: 1 };
     for (var i = 0; i < 12; i++) if (!BL[i]) html += '<div class="wk" data-n="' + i + '">' + KEYS[i] + '</div>';
     pn.innerHTML = html;
@@ -356,6 +357,12 @@
   }
   if (RM) { apps.forEach(function (a) { a.vis = true; }); tickShow(performance.now() + 20000); apps.forEach(function (a) { a.vis = false; }); }
   requestAnimationFrame(loop);
+
+  /* tabla comparativa: cada celda conoce su columna (vista en tarjetas en el móvil) */
+  $$('table.cmp').forEach(function (t) {
+    var hs = $$('thead th', t).map(function (h) { return h.textContent; });
+    $$('tbody tr', t).forEach(function (r) { $$('td', r).forEach(function (c, i) { c.setAttribute('data-l', hs[i] || ''); }); });
+  });
 
   /* DAW */
   $$('.daw button').forEach(function (b) {
