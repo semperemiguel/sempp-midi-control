@@ -83,13 +83,18 @@ svg text.w{fill:#fff}
 svg .dash{stroke-dasharray:6 5}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:700px){nav.toc ol{columns:1}header.top h1{font-size:30px}section{padding:18px 16px}ol.legend{grid-template-columns:1fr}.duo{grid-template-columns:1fr}.pin{width:22px;height:22px;font-size:11px;line-height:17px}}
+header.top .lng{margin-left:auto;display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;font:800 12px/1 "Hanken Grotesk",sans-serif;flex:none}
+header.top .lng a,header.top .lng span{padding:7px 11px;text-decoration:none;color:var(--ink)}
+header.top .lng span{background:var(--ink);color:var(--paper)}
 </style>
+<script>/* plugin: abre el manual en el idioma de SEMPP */(function(){if(location.port!=="47100"||/[?&]es\b/.test(location.search))return;try{fetch("/api/state").then(function(r){return r.json()}).then(function(s){var l=((s.config||{}).ui||{}).lang||"auto";if(l==="en"||(l==="auto"&&/^en/i.test(navigator.language||"")))location.replace("manual_en.html"+location.hash)}).catch(function(){})}catch(e){}})()</script>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
   <svg class="pop" viewBox="0 0 46 62" aria-hidden="true"><rect x="16" y="44" width="14" height="16" rx="5" fill="#F6E7C8" stroke="#3F3F3F" stroke-width="2.5"/><path d="M3 22a20 20 0 0 1 40 0v20a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z" fill="#FF6666" stroke="#3F3F3F" stroke-width="2.5"/><path d="M10 20a10 10 0 0 1 8-9" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
   <div><h1>SEMPP MIDI CONTROL</h1><p>Manual · versión 3</p></div>
+  <nav class="lng" aria-label="Idioma"><span>ES</span><a href="manual_en.html" hreflang="en" lang="en">EN</a></nav>
 </header>
 
 <nav class="toc"><b>Índice</b><ol>
@@ -131,6 +136,7 @@ svg .dash{stroke-dasharray:6 5}
 <div class="cap">Ableton manda MIDI a SEMPP; SEMPP mueve el Auto-Tune en Console y enseña el show en el Mac y en los iPads. Desde SEMPP también puedes manejar el transporte de Ableton.</div></div>
 <h3>Necesitas</h3>
 <ul><li>Un Mac con macOS 10.15 o posterior (Intel o Apple Silicon).</li><li>Una Apollo con UAD Console y Auto-Tune cargado en un canal.</li><li>Ableton Live 11 o 12.</li><li>Opcional: uno o varios iPads en la misma red que el Mac.</li></ul>
+<p><b>Mover la ventana:</b> pincha y arrastra desde cualquier sitio del plugin que no sea un botón o un control (fondos, tarjetas, textos, barras). Un clic suelto no mueve nada y el texto no se selecciona. Las direcciones del iPad (Ajustes → iPad) se copian con un clic. <span class="new">NUEVO</span></p>
 </section>
 
 <!-- ===================================================================== -->
@@ -206,11 +212,11 @@ svg .dash{stroke-dasharray:6 5}
   <span class="pin m" style="left:87.7%;top:10.5%">7</span><span class="pin m" style="left:92.2%;top:10.5%">8</span><span class="pin m" style="left:96.6%;top:10.5%">9</span>
   <span class="pin m" style="left:80.4%;top:10%">10</span><span class="pin" style="left:6.5%;top:8%">12</span><span class="pin" style="left:4%;top:56%">11</span></div></figure>
 <ol class="legend">
-  <li><i>1</i><b>El polo:</b> pulsa para activar o quitar el Auto-Tune (bypass).</li>
+  <li><i>1</i><b>El polo:</b> pulsa para activar o quitar el Auto-Tune (bypass). Con el Auto-Tune activo luce su sabor; en bypass se queda casi gris y las rayas se vuelven rosas. El botón redondo de arriba a la izquierda abre una tira con los <b>sabores</b> (Jelly, Menta, Almendrado, Bombón, Fresa, Limón, Sandía y Tricolor): al pasar por encima, el polo se lo prueba; con un clic se queda. Solo cambia su aspecto. <span class="new">NUEVO</span></li>
   <li><i>2</i><b>Tonalidad:</b> púlsala para elegirla en un piano, o arrastra, usa la rueda o las flechas. El botón <span class="k">CC</span> le asigna un control MIDI. <span class="new">NUEVO</span></li>
   <li><i>3</i><b>Escala:</b> púlsala para elegir entre todas las de tu Auto-Tune, con su nombre en español.</li>
   <li><i>4</i><b>Ruedas:</b> Retune Speed, Humanize, Flex-Tune y Natural Vibrato.</li>
-  <li><i>5</i><b>Panel de abajo</b>, con tres botones: <b>Actividad</b> (lo último que ha pasado: MIDI, iPads, Ableton y botones), <b>iPads</b> (quién está conectado ahora, desde qué vista y aparato, y si hay PIN y los controles están activos) o <b>Canales MIDI</b> (cada canal puede controlar un Auto-Tune distinto o reenviarse a buses IAC: luces, visuales…). Recuerda el último que elegiste. <span class="new">NUEVO</span></li>
+  <li><i>5</i><b>Panel de abajo</b>, con cuatro botones: <b>Actividad</b> (lo último que ha pasado: MIDI, iPads, Ableton y botones), <b>Presets</b> (<a href="#presets">ver presets</a>), <b>iPads</b> (quién está conectado ahora, desde qué vista y aparato, y si hay PIN y los controles están activos) o <b>Canales MIDI</b> (cada canal puede controlar un Auto-Tune distinto o reenviarse a buses IAC: luces, visuales…). Recuerda el último que elegiste. <span class="new">NUEVO</span></li>
   <li><i>6</i><b>Pestañas:</b> TUNE, ABLETON y SETLIST.</li>
   <li><i class="m">7</i><b>Vista de directo:</b> abre o cierra la ventana flotante.</li>
   <li><i class="m">8</i><b>Candado:</b> bloquea al instante los controles de todos los iPads.</li>
@@ -232,7 +238,7 @@ svg .dash{stroke-dasharray:6 5}
 <div class="duo"><figure><div class="frame"><img src="img/manual/m-pick-key.jpg" alt="Selector de tonalidad: un piano con las doce notas" loading="lazy"></div></figure>
 <figure><div class="frame"><img src="img/manual/m-pick-scale.jpg" alt="Selector de escala: fichas con todas las escalas del Auto-Tune" loading="lazy"></div></figure></div>
 <p>Pulsa la tarjeta de la tonalidad y sale un piano: toca una tecla y el Auto-Tune cambia al momento. La de la escala enseña todas las escalas de tu Auto-Tune, con el nombre en inglés (como en el Auto-Tune) y en español.</p>
-<p>La primera vez, SEMPP tiene que <b>leer las listas de tu Auto-Tune</b> (botón <b>Leer del Auto-Tune</b>, unos segundos por lista). Mientras lee, el Auto-Tune va pasando por todas las tonalidades o escalas, así que hazlo con el Auto-Tune en bypass o sin que nadie cante. Lo recuerda para siempre; si cambias de Auto-Tune, pulsa <b>Volver a leer</b>.</p>
+<p>Las listas de tonalidades y escalas <b>se leen solas</b> de tu Auto-Tune, sin pulsar nada: en cuanto Ableton está parado y el Auto-Tune está en bypass o sin voz entrando (al leer, el Auto-Tune pasa por todas las tonalidades o escalas, y así no se oye). Si abres el selector y aún no está la lista, se lee en ese momento con Ableton parado; si Ableton suena, se lee al pararlo. Si Ableton arranca o llega MIDI mientras lee, lo deja todo como estaba y lo vuelve a intentar después. Lo recuerda para siempre y, si cargas otro modelo de Auto-Tune, las vuelve a leer solas. <b>Volver a leer</b> sigue en el selector por si lo necesitas.</p>
 <div class="tip"><b>Ajustes → Tune → Bypass:</b> qué Program Change o CC apaga y enciende el Auto-Tune (por defecto, PC 0 = activo, PC 1 = apagado, PC 2 = alternar).</div>
 </section>
 
@@ -439,20 +445,51 @@ svg .dash{stroke-dasharray:6 5}
   <li><i class="m">5</i><b>Fijar:</b> en amarillo («Fijado»), el setlist no se cierra solo al elegir o arrancar una canción. Lo recuerda cada iPad. <span class="new">NUEVO</span></li></ol>
 <p>La lista se desplaza con el dedo, suave, aunque sea larga.</p>
 <p>Los nombres largos (canciones, partes, tonalidades y textos) se ven siempre enteros, en el iPad, en el plugin y en la vista de directo: la letra se ajusta a su sitio y nunca se parte una palabra por la mitad.</p>
-<h3>Vista del técnico: vúmetro <span class="new">NUEVO</span></h3>
-<figure><div class="frame"><img src="img/manual/m-ipad-tec.jpg" alt="Vista del técnico en el iPad con el vúmetro de la entrada de la voz" loading="lazy">
-  <span class="pin" style="left:24%;top:5.2%">1</span><span class="pin m" style="left:53.8%;top:20.5%">2</span><span class="pin" style="left:24%;top:24.2%">3</span>
-  <span class="pin" style="left:29.5%;top:37%">4</span><span class="pin" style="left:26%;top:52%">5</span></div></figure>
+<h3 id="tecnico">Vista del técnico <span class="new">NUEVO</span></h3>
+<figure><div class="frame"><img src="img/manual/m-ipad-tec.jpg" alt="Vista del técnico en el iPad: vúmetro, tonalidad, partes, notas para el técnico, próximas canciones y botones Sistema y Vertical" loading="lazy">
+  <span class="pin" style="left:22.5%;top:3.4%">1</span><span class="pin m" style="left:51%;top:7%">2</span><span class="pin" style="left:29%;top:30.5%">3</span>
+  <span class="pin m" style="left:30.5%;top:53.5%">4</span><span class="pin" style="left:61%;top:51.5%">5</span><span class="pin m" style="left:29%;top:80.5%">6</span>
+  <span class="pin" style="left:2.6%;top:85.5%">7</span><span class="pin m" style="left:17.6%;top:85.5%">8</span></div></figure>
 <ol class="legend">
-  <li><i>1</i><b>Vúmetro de la entrada</b> del canal de Console con el Auto-Tune: el técnico ve si la voz llega bien sin ir al ordenador del escenario. Verde, amarillo desde −12 dB, rojo desde −3 dB.</li>
-  <li><i class="m">2</i><b>Pico</b> de los últimos 2 segundos (la raya y el número).</li>
-  <li><i>3</i><b>CLIP:</b> se queda encendido hasta que lo tocas. Al lado, <b>SIN SEÑAL</b> si no entra nada mientras Ableton suena.</li>
-  <li><i>4</i><b>Partes</b> de la canción.</li>
-  <li><i>5</i><b>Estado del sistema</b>, conexiones y alarmas.</li></ol>
+  <li><i>1</i><b>Vúmetro de la entrada</b> del canal de Console con el Auto-Tune: verde, amarillo desde −12 dB, rojo desde −3 dB, con el pico de los últimos 2 segundos. <b>CLIP</b> se queda encendido hasta que lo tocas; <b>SIN SEÑAL</b> si no entra nada mientras Ableton suena.</li>
+  <li><i class="m">2</i><b>Tonalidad</b> del Auto-Tune.</li>
+  <li><i>3</i><b>Partes</b> de la canción, grandes, con los compases que faltan para la siguiente.</li>
+  <li><i class="m">4</i><b>Ahora:</b> la nota para el técnico que vale en este momento, en blanco y grande.</li>
+  <li><i>5</i><b>Lo que viene:</b> las tres notas siguientes, en celeste y más pequeñas, con los compases que faltan. La que se acerca parpadea.</li>
+  <li><i class="m">6</i><b>Próximas canciones</b> del show (hasta 4): su primera nota, la duración y a qué hora empiezan (estimada).</li>
+  <li><i>7</i><b>Sistema:</b> el estado del sistema, conexiones y alarmas, plegado. Tócalo para abrirlo y × para cerrarlo. Si hay algún problema, el botón se pone en <b>coral</b> con el número de avisos.</li>
+  <li><i class="m">8</i><b>Vertical:</b> cambia a la vista en vertical (y vuelve). Cada aparato lo recuerda; la primera vez, una pantalla más alta que ancha empieza en vertical.</li></ol>
+<h3 id="presets">Presets de Tune <span class="new">NUEVO</span></h3>
+<p>Un preset guarda la tonalidad, la escala y los cuatro mandos del Auto-Tune (Retune Speed, Humanize, Flex-Tune y Natural Vibrato) tal y como están. El bypass no se guarda: lo siguen mandando tus Program Change. Están en el panel de abajo de TUNE → <b>Presets</b>.</p>
+<ul>
+  <li><b>Guardar actual</b> crea un preset nuevo con lo que hay ahora; le pones nombre.</li>
+  <li><b>Clic en una tarjeta</b> = cargar ese preset. La que está cargada sale en menta; si después tocas algo, pone <b>CAMBIADO</b>.</li>
+  <li><b>⋯</b> en cada tarjeta: guardar lo actual en ese preset, renombrar, <b>Canciones…</b>, moverlo antes o después, y borrar (pide una segunda pulsación).</li>
+  <li><b>Canciones…</b> (opcional): al llegar a esa canción, sonando o colocándola, se carga su preset. Cada canción puede tener uno.</li>
+  <li><b>Por MIDI:</b> en Ajustes → Tune → Presets eliges un CC. Mándalo desde Ableton por la salida SEMPP MIDI CONTROL en un canal que controle el Auto-Tune: el valor es el número del preset (el que sale en su tarjeta; 0 no hace nada).</li>
+  <li>Se guardan dentro de SEMPP, sin archivos. Para pasarlos a otro Mac o tener copia: Ajustes → Tune → Presets → <b>Exportar</b> (crea un archivo en Descargas) e <b>Importar</b> (los añade a los que ya tienes).</li></ul>
+<h3 id="reloj-show">Reloj del show <span class="new">NUEVO</span></h3>
+<p>Cuenta el tiempo de show (h:mm:ss) desde que empieza el concierto. En <b>Ajustes → Ableton → Reloj del show</b> elige el marcador con el que empieza el show (por ejemplo, la intro). Cuando ese marcador empieza a sonar, el reloj se pone en marcha solo y sale en la barra de abajo del plugin (<b>EN SHOW</b>) y en la tarjeta de la canción de los iPad del director y del técnico.</p>
+<ul>
+  <li>Sigue contando aunque pares Ableton entre canciones; si cierras y abres SEMPP, sigue donde iba.</li>
+  <li>Si en los 5 primeros minutos vuelves a lanzar el marcador de inicio desde el principio (salida en falso), empieza de nuevo. Darle a Play a mitad de esa canción tras una pausa no lo toca.</li>
+  <li>Haz clic en <b>EN SHOW</b> en la barra (o ve a Ajustes) para <b>Poner a cero</b> o <b>Empezar ahora</b> a mano. Al día siguiente no hace falta: un reloj de más de 8 horas ya no se enseña y el marcador lo vuelve a empezar.</li></ul>
+<h3 id="notas-tecnico">Notas para el técnico <span class="new">NUEVO</span></h3>
+<p>Una pista MIDI de tu set con un pasaje por aviso, con el aviso como nombre: «Telecaster», «Cejilla 2», «Cambio a acústica», «Afinar en Re»… Colócalos en el Arrangement donde ocurre cada cambio. Elige la pista en <b>Ajustes → Ableton → Notas para el técnico</b>. Solo la ve el iPad del técnico: ni el plugin, ni la vista de directo, ni el director ni la banda.</p>
+<ul>
+  <li><b>Ahora</b> es la última nota de la canción que ya ha empezado: sigue a la vista hasta la siguiente (la guitarra que lleva, la cejilla puesta).</li>
+  <li><b>Lo que viene</b> sigue con las notas de las siguientes canciones del setlist («Al empezar Cerca de ti»), para preparar la guitarra con tiempo.</li>
+  <li>Cuando faltan los compases que eliges en <b>Avisar antes</b> (por defecto 4), la nota que se acerca se marca y su cuenta parpadea.</li>
+</ul>
+<p>Tras actualizar, reinicia Ableton: con el script anterior solo se ven las notas de la canción que suena.</p>
+<h3 id="tecnico-vertical">Vista vertical <span class="new">NUEVO</span></h3>
+<div class="duo"><figure><div class="frame"><img src="img/manual/m-ipad-tec-vert.jpg" alt="Vista del técnico en vertical en un móvil" loading="lazy"></div></figure>
+<div><p>En las tres vistas (director, técnico y banda), para un móvil, un iPad en vertical o una ventana estrecha en el ordenador: todo apilado y a lo ancho, en el mismo orden. En el técnico se cambia con el botón <b>Vertical</b>, junto a Sistema; en el director y la banda, con el icono del móvil girando, en la tarjeta de la canción junto al del setlist. Cada aparato lo recuerda.</p>
+<p><b>Para ver una vista del iPad en el propio Mac</b>, abre en el navegador <b>http://127.0.0.1:47100/ipad?v=tec</b> (o <b>v=dm</b>, <b>v=banda</b>). También vale la dirección con el nombre del Mac que sale en Ajustes → iPad.</p></div></div>
 <h3>Vistas</h3>
 <table><tr><th>Vista</th><th>Para quién</th></tr>
 <tr><td><b>Director musical</b></td><td>Todo: tune, compás, canción y tiempos, partes, textos, transporte, loop, Click y Artist Ref.</td></tr>
-<tr><td><b>Técnico</b></td><td>Vúmetro de la entrada de la voz, partes de la canción y, debajo, estado del sistema, conexiones y alarmas; con tune, compás, loop y setlist.</td></tr>
+<tr><td><b>Técnico</b></td><td>Vúmetro de la entrada de la voz, tonalidad, partes de la canción, notas para el técnico, próximas canciones y el estado del sistema (plegado, en el botón Sistema); con tune, compás, loop y setlist. También en vertical.</td></tr>
 <tr><td><b>Banda</b></td><td>Canción y cuenta atrás en grande, compás, partes, textos y loop. Por defecto, solo para mirar.</td></tr></table>
 <h3 id="pin">PIN de acceso <span class="new">NUEVO</span></h3>
 <div class="duo"><figure><div class="frame"><img src="img/manual/m-pin.jpg" alt="Ajustes → iPad: PIN de acceso con el interruptor, el PIN, Generar y Guardar PIN" loading="lazy"></div></figure>
@@ -515,9 +552,9 @@ svg .dash{stroke-dasharray:6 5}
 <figure class="phone-w"><div class="frame"><img src="img/manual/m-ajustes.jpg" alt="Pestañas de Ajustes: General, Tune, MIDI, Ableton, Vistas e iPad" loading="lazy"></div></figure>
 <table><tr><th>Pestaña</th><th>Qué hay dentro</th></tr>
 <tr><td><b>General</b></td><td>Idioma, tema, <b>tamaño de la ventana</b> (de Pequeño a Muy grande: todo el plugin más grande o más pequeño, sin cambiar nada de sitio; los tamaños que no caben en tu pantalla salen apagados) <span class="new">NUEVO</span> y tamaño de letra; actualizaciones y arranque al encender el Mac; ayuda (manual, asistente, web, enviar informe), registro, detener y desinstalar.</td></tr>
-<tr><td><b>Tune</b></td><td>Qué Auto-Tune se controla y la conexión con UAD Console; bypass por CC y por Program Change.</td></tr>
+<tr><td><b>Tune</b></td><td>Qué Auto-Tune se controla y la conexión con UAD Console; bypass por CC y por Program Change; <a href="#presets">presets de Tune</a>.</td></tr>
 <tr><td><b>MIDI</b></td><td>El puerto de SEMPP en Ableton, otras entradas y qué mueve cada CC (con Aprender).</td></tr>
-<tr><td><b>Ableton</b></td><td>Estado del script, pistas cuyos textos se leen, pista de partes y los botones de <a href="#mix">Click y Artist Ref</a>.</td></tr>
+<tr><td><b>Ableton</b></td><td>Estado del script, pistas cuyos textos se leen, pista de partes, los botones de <a href="#mix">Click y Artist Ref</a>, el <a href="#reloj-show">reloj del show</a> y las <a href="#notas-tecnico">notas para el técnico</a>.</td></tr>
 <tr><td><b>Vistas</b></td><td>Vista de directo (abrir, clics a través, opacidad, panel de textos) y visor de textos.</td></tr>
 <tr><td><b>iPad</b></td><td>Activar el iPad, <a href="#pin">PIN de acceso</a> <span class="new">NUEVO</span>, modo táctil, códigos QR de cada vista con sus permisos y quién está conectado.</td></tr></table>
 <p>Tocando un canal MIDI en la pestaña TUNE se abre su propio panel: qué Auto-Tune controla y a qué buses reenvía.</p>

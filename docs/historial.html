@@ -70,12 +70,14 @@ h1{font:400 64px/1 "Chewy",sans-serif;color:var(--coral);text-shadow:3px 3px 0 r
 footer{padding:34px 0 50px;text-align:center;font:600 14px/1.5 "Hanken Grotesk",sans-serif;color:var(--ink-2)}
 @media (max-width:760px){.stats{grid-template-columns:1fr 1fr}h1{font-size:46px}nav .links .hm{display:none}}
 @media (max-width:480px){.ver li{grid-template-columns:1fr;gap:4px}.era{padding-left:26px}.era::before{left:8px}.era h2::before{left:-25px;width:18px;height:18px}h1{font-size:40px}.era h2{font-size:30px}}
+h1,h2,.ver h3,.stats b,.next h2{font-family:"Hanken Grotesk",system-ui,sans-serif!important;font-weight:800!important;letter-spacing:-.035em}
+h1{text-shadow:none!important}
 </style>
 </head>
 <body>
 <nav><div class="w">
-  <a class="brand" href="index.html"><img src="img/avatar.jpg" alt=""><span><b>Sempp</b><small>MIDI CONTROL</small></span></a>
-  <div class="links"><a class="hm" href="index.html#funciones">Funciones</a><a href="manual.html">Manual</a><a href="index.html">Inicio</a></div>
+  <a class="brand" href="index.html"><img src="img/icon.png" alt=""><span><b>Sempp</b><small>MIDI CONTROL</small></span></a>
+  <div class="links"><a class="hm" href="index.html#s-tune">Funciones</a><a href="manual.html">Manual</a><a href="index.html">Inicio</a><a href="historial_en.html" hreflang="en" lang="en">EN</a></div>
 </div></nav>
 
 <header><div class="w">
@@ -97,7 +99,7 @@ footer{padding:34px 0 50px;text-align:center;font:600 14px/1.5 "Hanken Grotesk",
   <div class="next">
     <span class="tag">Lo que viene</span>
     <h2>Y después de la 3.0</h2>
-    <p>Licencias en tres modelos (MIDI, Ableton y setlist, o todo), firma de Apple, web y manual en inglés y una pestaña de prompter para las letras, sincronizada con la sesión de Ableton.</p>
+    <p>Licencias en tres modelos (MIDI, Setlist y Full), firma y notarización de Apple, la versión para Logic Pro, una pestaña Prompter para las letras sincronizada con la sesión, pista de comandos y avisos para la banda.</p>
   </div>
 </div>
 <footer>SEMPP MIDI CONTROL · hecho por Miguel Sempere · © 2026</footer>
@@ -126,7 +128,20 @@ var ERAS=[
   ["Beta 5.7 – 5.9","",[["m","Play y Stop como la barra espaciadora de Ableton: Stop no mueve nada y Play arranca en la canción o la parte colocada."],["m","Anterior y siguiente con los localizadores nativos de Ableton: salto a tempo con el destino a la vista."],["a","Tonalidad y escala enteras en el iPad; el polo de TUNE ya no parpadea."]]],
   ["Beta 6 y 6.1","",[["f","Partes de la canción en SETLIST, pulsables."],["f","Compases que faltan para la siguiente parte en los iPad."],["f","Tamaño de la ventana del plugin a elegir."],["s","Los errores del iPad se ven en pantalla y llegan al informe."],["a","SEMPP respeta los clips de «stop y siguiente marcador» de la sesión."]]],
   ["Beta 7","",[["f","Tres vistas del setlist, como en el Finder: lista, compacta y tarjetas."],["f","Selector de tonalidad en un piano y de escala con todas las del Auto-Tune, en español."],["f","Aviso de versión nueva con sus novedades: actualizar ahora o más tarde."],["m","Panel de TUNE con menús que se alternan: Actividad y Canales MIDI."]]],
-  ["Beta 7.1","",[["f","PIN de acceso para los iPad."],["f","Quién está conectado, en el panel de TUNE."],["f","Un botón esconde todas las instrucciones de uso."],["a","Relojes largos del setlist enteros también en Safari."]]]]}
+  ["Beta 7.1","",[["f","PIN de acceso para los iPad."],["f","Quién está conectado, en el panel de TUNE."],["f","Un botón esconde todas las instrucciones de uso."],["a","Relojes largos del setlist enteros también en Safari."]]]]},
+ {n:"Pulido para el escenario",w:"30 de octubre de 2026",i:"Detalles de uso en el escritorio y una misma escala visual en todo el plugin.",v:[
+  ["Beta 7.2","30 oct",[["f","Tipografía a elegir: Jelly, Sobria o Técnica."],["f","Barra espaciadora = Play / Stop con la ventana de SEMPP delante, como en Ableton."],["m","Transición al cambiar de pestaña; el orden y el modo al acabar se cambian en las tres vistas del setlist."],["a","LOOP, CLICK y REF responden al primer clic aunque Ableton esté delante."]]],
+  ["Beta 7.3 – 7.5","",[["m","Vista de tarjetas del setlist preparada para 40 canciones o más."],["a","El compás de cuatro cifras («2350.1») cabe entero en la barra."],["m","Engranaje de la vista de directo visible también con clics a través y escala visual unificada."]]]]},
+ {n:"El técnico, en primer plano",w:"3 de noviembre de 2026",i:"Notas para el técnico, vista vertical, reloj del show y presets de Tune.",v:[
+  ["Beta 8","3 nov",[["f","Notas para el técnico: una pista MIDI con pasajes nombrados (cambios de guitarra, cejillas, afinaciones) que solo ve el iPad del técnico, con los compases que faltan."]]],
+  ["Beta 9 y 9.1","",[["f","Vista del técnico renovada: tonalidad, partes y notas en grande, las próximas cuatro canciones con su hora y el estado del sistema plegado."],["f","Vista vertical en los tres iPad, para móvil o ventana estrecha."],["m","La vista del iPad también se abre en el navegador del propio Mac."]]],
+  ["Beta 9.2","",[["m","La ventana del plugin se mueve desde cualquier zona que no sea un control, sin seleccionar texto."],["m","Las direcciones del iPad se copian con un clic."]]],
+  ["Beta 9.3","",[["f","Las listas de tonalidad y escala se leen solas del Auto-Tune, sin pulsar nada."],["f","Polo de TUNE con la forma del logo Jelly Vice y ocho sabores a elegir."],["a","El polo ya no aparece grande y encoge al volver a TUNE."]]],
+  ["Beta 9.4","",[["f","Reloj del show: arranca solo con el marcador de inicio y se ve en la barra y en los iPad del director y del técnico."]]],
+  ["Beta 9.5","",[["f","Presets de Tune: tonalidad, escala y mandos en un clic, por CC desde Ableton o al llegar a cada canción, con exportar e importar."],["m","Selector de sabores en una tira lateral con vista previa."],["s","Manual completo en inglés."]]]]},
+ {n:"En paralelo",w:"Octubre y noviembre de 2026",i:"Mientras avanza la 3.0, dos líneas de trabajo más.",v:[
+  ["SEMPP MIDI CONTROL for Logic","betas 1 – 3.4",[["f","Versión para Logic Pro 11: canciones y partes desde pasajes MIDI con nombre, sin depender de los marcadores."],["f","Saltos durante la reproducción sin cortes y superficie Mackie Control para Click y Ref."],["s","En fase de pruebas."]]],
+  ["Sistema de licencias","en desarrollo",[["s","Número de serie con validación local, activación en dos Macs y prueba de 14 días."],["s","Tienda preparada para el lanzamiento."]]]]}
 ];
 var log=document.getElementById("log"),cnt={f:0,m:0,a:0,s:0},nv=0,h="";
 function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}

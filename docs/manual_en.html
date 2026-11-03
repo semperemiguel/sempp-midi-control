@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>User manual · SEMPP MIDI CONTROL</title>
+<meta name="description" content="SEMPP MIDI CONTROL user manual with screenshots and diagrams: installation, Ableton, setlist, transport, iPad, live view and troubleshooting.">
+<style>
+@font-face{font-family:"Chewy";src:url(fonts/chewy-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken-grotesk-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+:root{--cream:#F2F0EB;--paper:#FBFAF6;--ink:#3F3F3F;--ink-2:#6B6966;--ink-3:#A3A09A;--coral:#FF6666;--mint:#40E0D0;--teal:#087F7C;--sky:#A9ECEC;--butter:#FFE08A;--pink:#F7B8C6;--lilac:#C9B8F2;--grey:#E6E3DC}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#2A2826;--paper:#33302D;--ink:#EDEAE4;--ink-2:#C2BDB5;--ink-3:#8E8A83;--teal:#40E0D0;--grey:#4A4743}}
+:root[data-theme="dark"]{--cream:#2A2826;--paper:#33302D;--ink:#EDEAE4;--ink-2:#C2BDB5;--ink-3:#8E8A83;--teal:#40E0D0;--grey:#4A4743}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:500 16px/1.6 "Hanken Grotesk",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:28px 16px 80px}
+header.top{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+header.top .pop{width:46px;height:62px;flex:none}
+header.top h1{font:400 38px/1 "Chewy",sans-serif;color:var(--coral)}
+header.top p{font:800 12px/1 "Hanken Grotesk",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);margin-top:6px}
+nav.toc{background:var(--paper);border:2.5px solid var(--ink);border-radius:18px;box-shadow:4px 4px 0 var(--ink);padding:16px 20px;margin-bottom:28px}
+nav.toc b{font:800 12px/1 "Hanken Grotesk",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+nav.toc ol{columns:2;column-gap:28px;margin:10px 0 0 20px}
+nav.toc a{color:var(--ink);text-decoration:none;font-weight:700}
+nav.toc a:hover{color:var(--coral)}
+section{background:var(--paper);border:2.5px solid var(--ink);border-radius:18px;box-shadow:4px 4px 0 var(--ink);padding:22px 24px;margin-bottom:22px}
+h2{font:400 30px/1.1 "Chewy",sans-serif;color:var(--coral);margin-bottom:10px}
+h3{font:800 14px/1.2 "Hanken Grotesk",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin:20px 0 6px}
+p+p{margin-top:10px}
+ul,ol{margin:8px 0 0 22px}
+li{margin:4px 0}
+b,strong{font-weight:800}
+kbd,.k{display:inline-block;padding:1px 8px;border:2px solid var(--ink);border-radius:8px;background:var(--cream);font:800 13px/1.5 "Hanken Grotesk",sans-serif;box-shadow:2px 2px 0 var(--ink)}
+.tip{margin-top:14px;padding:12px 16px;border:2px dashed var(--ink-3);border-radius:14px;color:var(--ink-2);font-size:15px}
+.tip b{color:var(--ink)}
+.warn{margin-top:14px;padding:12px 16px;border:2.5px solid var(--ink);border-radius:14px;background:var(--butter);color:#3F3F3F;font-size:15px}
+.new{display:inline-block;margin-left:6px;padding:2px 8px;border:2px solid var(--ink);border-radius:999px;background:var(--mint);color:#3F3F3F;font:800 10.5px/1.3 "Hanken Grotesk",sans-serif;letter-spacing:.1em;vertical-align:3px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+td,th{text-align:left;padding:8px 10px;border-bottom:2px dashed var(--ink-3);vertical-align:top}
+th{font:800 12px/1.2 "Hanken Grotesk",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+footer{text-align:center;color:var(--ink-3);font-size:13px;margin-top:30px}
+
+/* capturas con marcas numeradas */
+figure{margin:16px 0 4px}
+figure .frame{position:relative;border:2.5px solid #3F3F3F;border-radius:14px;overflow:hidden;background:#F2F0EB;box-shadow:3px 3px 0 var(--ink)}
+figure .frame img{display:block;width:100%;height:auto}
+figure .frame.deck{padding-bottom:34px}
+figcaption{margin-top:8px;font:700 13px/1.4 "Hanken Grotesk",sans-serif;color:var(--ink-2)}
+.pin{position:absolute;transform:translate(-50%,-50%);width:28px;height:28px;border-radius:50%;background:#FF6666;border:2.5px solid #3F3F3F;color:#fff;
+  font:800 14px/23px "Hanken Grotesk",sans-serif;text-align:center;box-shadow:2px 2px 0 #3F3F3F;text-shadow:1px 1px 0 rgba(63,63,63,.35)}
+.pin.m{background:#40E0D0;color:#3F3F3F;text-shadow:none}
+ol.legend{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
+ol.legend li{position:relative;padding-left:36px;margin:0;font-size:15px;line-height:1.45}
+ol.legend li>i{position:absolute;left:0;top:0;width:25px;height:25px;border-radius:50%;background:#FF6666;border:2px solid #3F3F3F;color:#fff;font:800 12.5px/21px "Hanken Grotesk",sans-serif;text-align:center;font-style:normal}
+ol.legend li>i.m{background:#40E0D0;color:#3F3F3F}
+.phone-w{max-width:620px}
+/* esquemas dibujados */
+.vg{margin:16px 0 4px;padding:14px;border:2.5px solid var(--ink);border-radius:14px;background:var(--cream)}
+.vg svg{display:block;width:100%;height:auto}
+.vg .cap{margin-top:8px;font:700 13px/1.4 "Hanken Grotesk",sans-serif;color:var(--ink-2)}
+svg .ink{stroke:var(--ink)}
+svg .fink{fill:var(--ink)}
+svg .paper{fill:var(--paper)}
+svg .cream{fill:var(--cream)}
+svg .grey{fill:var(--grey)}
+svg .mint{fill:#40E0D0}
+svg .coral{fill:#FF6666}
+svg .butter{fill:#FFE08A}
+svg .sky{fill:#A9ECEC}
+svg .pink{fill:#F7B8C6}
+svg .lilac{fill:#C9B8F2}
+svg text{font-family:"Hanken Grotesk",system-ui,sans-serif;font-weight:800;fill:var(--ink)}
+svg text.t{font-size:13px}
+svg text.s{font-size:11px;font-weight:700;fill:var(--ink-2)}
+svg text.l{font-size:10.5px;letter-spacing:.12em;fill:var(--teal)}
+svg text.c{font-family:"Chewy",sans-serif;font-weight:400}
+svg text.dk{fill:#3F3F3F}
+svg text.w{fill:#fff}
+svg .dash{stroke-dasharray:6 5}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){nav.toc ol{columns:1}header.top h1{font-size:30px}section{padding:18px 16px}ol.legend{grid-template-columns:1fr}.duo{grid-template-columns:1fr}.pin{width:22px;height:22px;font-size:11px;line-height:17px}}
+header.top .lng{margin-left:auto;display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;font:800 12px/1 "Hanken Grotesk",sans-serif;flex:none}
+header.top .lng a,header.top .lng span{padding:7px 11px;text-decoration:none;color:var(--ink)}
+header.top .lng span{background:var(--ink);color:var(--paper)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <svg class="pop" viewBox="0 0 46 62" aria-hidden="true"><rect x="16" y="44" width="14" height="16" rx="5" fill="#F6E7C8" stroke="#3F3F3F" stroke-width="2.5"/><path d="M3 22a20 20 0 0 1 40 0v20a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z" fill="#FF6666" stroke="#3F3F3F" stroke-width="2.5"/><path d="M10 20a10 10 0 0 1 8-9" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
+  <div><h1>SEMPP MIDI CONTROL</h1><p>Manual · version 3</p></div>
+  <nav class="lng" aria-label="Language"><a href="manual.html?es" hreflang="es" lang="es">ES</a><span>EN</span></nav>
+</header>
+
+<nav class="toc"><b>Contents</b><ol>
+  <li><a href="#que">What it is</a></li><li><a href="#instalar">Installation</a></li>
+  <li><a href="#ableton">Setting up Ableton</a></li><li><a href="#tune">TUNE tab</a></li>
+  <li><a href="#abl">ABLETON tab</a></li><li><a href="#barra">Bottom bar and transport</a></li>
+  <li><a href="#setlist">SETLIST tab</a></li><li><a href="#partes">Jumping to a section</a></li><li><a href="#mix">Click and Artist Ref</a></li>
+  <li><a href="#ipad">iPad</a></li><li><a href="#directo">Live view</a></li>
+  <li><a href="#ajustes">Settings</a></li><li><a href="#act">Updates</a></li><li><a href="#problemas">Troubleshooting and help</a></li></ol></nav>
+
+<!-- ===================================================================== -->
+<section id="que"><h2>What it is</h2>
+<p>SEMPP MIDI CONTROL controls <b>Auto-Tune</b> in your Apollo's <b>UAD Console</b> from <b>Ableton Live</b>: key, scale, retune and bypass, clip by clip. It also reads your Ableton set and shows you, on the Mac and on the iPad, the song that is playing, its sections, the text of your MIDI clips, the setlist and how much time is left.</p>
+<div class="vg" role="img" aria-label="Diagram: Ableton sends MIDI to SEMPP, SEMPP drives Auto-Tune in Console and shows the show on the iPad and in the live view">
+<svg viewBox="0 0 760 250">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fink"/></marker></defs>
+  <rect x="14" y="52" width="176" height="86" rx="16" class="paper ink" stroke-width="3"/>
+  <text x="102" y="90" text-anchor="middle" class="c" font-size="24">Ableton Live</text>
+  <text x="102" y="114" text-anchor="middle" class="s">MIDI clips · locators</text>
+  <rect x="292" y="40" width="176" height="110" rx="18" class="mint ink" stroke-width="3"/>
+  <text x="380" y="88" text-anchor="middle" class="c dk" font-size="30">SEMPP</text>
+  <text x="380" y="112" text-anchor="middle" class="s dk" style="fill:#3F3F3F">runs in the background</text>
+  <rect x="570" y="52" width="176" height="86" rx="16" class="paper ink" stroke-width="3"/>
+  <text x="658" y="88" text-anchor="middle" class="c" font-size="22">UAD Console</text>
+  <text x="658" y="112" text-anchor="middle" class="s">Auto-Tune on the Apollo</text>
+  <path d="M192 82H286" class="ink" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="240" y="72" text-anchor="middle" class="s">MIDI: CC and PC</text>
+  <path d="M286 112H196" class="ink dash" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="241" y="130" text-anchor="middle" class="s">Play, Stop, setlist</text>
+  <path d="M470 95H564" class="ink" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="517" y="85" text-anchor="middle" class="s">key, retune…</text>
+  <path d="M350 152V192" class="ink" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M410 152V192" class="ink" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="196" y="196" width="168" height="44" rx="12" class="butter ink" stroke-width="2.5"/>
+  <text x="280" y="223" text-anchor="middle" class="t dk">iPads (local network)</text>
+  <rect x="396" y="196" width="168" height="44" rx="12" class="sky ink" stroke-width="2.5"/>
+  <text x="480" y="223" text-anchor="middle" class="t dk">Live view</text>
+</svg>
+<div class="cap">Ableton sends MIDI to SEMPP; SEMPP drives Auto-Tune in Console and shows the show on the Mac and on the iPads. You can also run Ableton's transport from SEMPP.</div></div>
+<h3>You need</h3>
+<ul><li>A Mac running macOS 10.15 or later (Intel or Apple Silicon).</li><li>An Apollo with UAD Console and Auto-Tune loaded on a channel.</li><li>Ableton Live 11 or 12.</li><li>Optional: one or more iPads on the same network as the Mac.</li></ul>
+<p><b>Moving the window:</b> click and drag from anywhere in the plugin that is not a button or a control (backgrounds, cards, text, bars). A single click moves nothing and text is never selected. The iPad addresses (Settings → iPad) are copied with one click. <span class="new">NEW</span></p>
+</section>
+
+<!-- ===================================================================== -->
+<section id="instalar"><h2>Installation</h2>
+<ol><li>Open the SEMPP installer (<b>.dmg</b> file) and double-click <b>Install SEMPP MIDI CONTROL</b>. If it is a test version, the installer shows a <b>BETA</b> label.</li>
+<li>If macOS says it cannot open it because it is from an unidentified developer: <b>System Settings → Privacy &amp; Security → Open Anyway</b>.</li>
+<li>Click <b>Install</b> and type your Mac password.</li>
+<li>When it finishes, SEMPP opens together with the <b>setup assistant</b>, which checks step by step that everything works. You can skip it and open it again from <b>Settings → General → Setup assistant</b>.</li></ol>
+<div class="warn"><b>Restart Ableton</b> after installing or updating, so it loads the new SEMPP script.</div>
+</section>
+
+<!-- ===================================================================== -->
+<section id="ableton"><h2>Setting up Ableton</h2>
+<h3>1 · Control surface and MIDI output</h3>
+<p>Ableton → <b>Preferences → Link, Tempo &amp; MIDI</b>. Two things on the same screen:</p>
+<div class="vg" role="img" aria-label="Diagram of Ableton's MIDI preferences: SEMPP control surface with input and output set to None, and Track enabled on the SEMPP MIDI CONTROL output">
+<svg viewBox="0 0 760 250">
+  <rect x="10" y="8" width="740" height="234" rx="14" class="paper ink" stroke-width="2.5"/>
+  <text x="30" y="36" class="l">PREFERENCES → LINK, TEMPO &amp; MIDI</text>
+  <text x="30" y="68" class="s">Control Surface</text><text x="300" y="68" class="s">Input</text><text x="500" y="68" class="s">Output</text>
+  <rect x="26" y="78" width="250" height="34" rx="8" class="mint ink" stroke-width="2.5"/><text x="40" y="100" class="t dk">SEMPP</text><path d="M252 90l6 7 6-7" class="ink" stroke-width="2" fill="none"/>
+  <rect x="296" y="78" width="180" height="34" rx="8" class="cream ink" stroke-width="2"/><text x="310" y="100" class="t">None</text>
+  <rect x="496" y="78" width="180" height="34" rx="8" class="cream ink" stroke-width="2"/><text x="510" y="100" class="t">None</text>
+  <circle cx="712" cy="95" r="15" class="coral ink" stroke-width="2.5"/><text x="712" y="100" text-anchor="middle" class="t w">1</text>
+  <path d="M26 132H730" class="ink dash" stroke-width="1.5" opacity=".4"/>
+  <text x="30" y="160" class="s">MIDI Ports</text><text x="420" y="160" class="s">Track</text><text x="500" y="160" class="s">Sync</text><text x="580" y="160" class="s">Remote</text>
+  <rect x="26" y="170" width="370" height="34" rx="8" class="cream ink" stroke-width="2"/><text x="40" y="192" class="t">Output: SEMPP MIDI CONTROL</text>
+  <rect x="414" y="172" width="52" height="30" rx="8" class="butter ink" stroke-width="2.5"/><text x="440" y="192" text-anchor="middle" class="t dk">ON</text>
+  <rect x="494" y="172" width="52" height="30" rx="8" class="cream ink" stroke-width="2"/>
+  <rect x="574" y="172" width="52" height="30" rx="8" class="cream ink" stroke-width="2"/>
+  <circle cx="712" cy="187" r="15" class="coral ink" stroke-width="2.5"/><text x="712" y="192" text-anchor="middle" class="t w">2</text>
+</svg>
+<div class="cap"><b>1</b> In a free <b>Control Surface</b> slot choose <b>SEMPP</b>, with Input and Output set to <b>None</b> (it does not use MIDI: this is how it reads the set and receives Play/Stop). <b>2</b> Under <b>MIDI Ports</b>, enable <b>Track</b> on the <b>SEMPP MIDI CONTROL</b> output.</div></div>
+<h3>2 · How to organise the set</h3>
+<div class="vg" role="img" aria-label="Arrangement diagram: each locator is a song, the sections track has one clip per section and the lyrics track one clip per line">
+<svg viewBox="0 0 760 286">
+  <rect x="10" y="8" width="740" height="270" rx="14" class="paper ink" stroke-width="2.5"/>
+  <rect x="120" y="26" width="616" height="26" rx="6" class="cream"/>
+  <g class="ink" stroke-width="1.5" opacity=".35"><path d="M197 30v18M274 30v18M351 30v18M428 30v18M505 30v18M582 30v18M659 30v18"/></g>
+  <path d="M120 26v236" class="ink" stroke-width="2.5"/><path d="M120 26l18 8-18 8z" class="coral ink" stroke-width="1.5"/>
+  <path d="M428 26v236" class="ink" stroke-width="2.5"/><path d="M428 26l18 8-18 8z" class="coral ink" stroke-width="1.5"/>
+  <text x="128" y="70" class="t" style="fill:#FF6666">Summer in Lisbon</text><text x="436" y="70" class="t" style="fill:#FF6666">Close to you</text>
+  <text x="22" y="44" class="l">LOCATORS</text>
+  <text x="22" y="112" class="l">SECTIONS</text>
+  <rect x="122" y="92" width="74" height="34" rx="6" class="sky ink" stroke-width="2"/><text x="159" y="114" text-anchor="middle" class="s dk" style="fill:#3F3F3F">INTRO</text>
+  <rect x="198" y="92" width="110" height="34" rx="6" class="butter ink" stroke-width="2"/><text x="253" y="114" text-anchor="middle" class="s dk" style="fill:#3F3F3F">VERSE</text>
+  <rect x="310" y="92" width="116" height="34" rx="6" class="pink ink" stroke-width="2"/><text x="368" y="114" text-anchor="middle" class="s dk" style="fill:#3F3F3F">CHORUS</text>
+  <rect x="430" y="92" width="96" height="34" rx="6" class="sky ink" stroke-width="2"/><text x="478" y="114" text-anchor="middle" class="s dk" style="fill:#3F3F3F">INTRO</text>
+  <rect x="528" y="92" width="120" height="34" rx="6" class="lilac ink" stroke-width="2"/><text x="588" y="114" text-anchor="middle" class="s dk" style="fill:#3F3F3F">VERSE</text>
+  <rect x="650" y="92" width="86" height="34" rx="6" class="pink ink" stroke-width="2"/><text x="693" y="114" text-anchor="middle" class="s dk" style="fill:#3F3F3F">…</text>
+  <text x="22" y="160" class="l">LYRICS</text>
+  <rect x="198" y="140" width="110" height="34" rx="6" class="cream ink" stroke-width="2"/><text x="208" y="162" class="s">City lights…</text>
+  <rect x="310" y="140" width="116" height="34" rx="6" class="cream ink" stroke-width="2"/><text x="320" y="162" class="s">It all starts…</text>
+  <rect x="528" y="140" width="120" height="34" rx="6" class="cream ink" stroke-width="2"/><text x="538" y="162" class="s">Under the moon…</text>
+  <text x="22" y="208" class="l">TUNE</text>
+  <rect x="122" y="188" width="304" height="34" rx="6" class="cream ink" stroke-width="2"/><path d="M126 214H200L200 198H330L330 210H422" class="ink" stroke-width="2.5" fill="none" style="stroke:#087F7C"/>
+  <rect x="430" y="188" width="306" height="34" rx="6" class="cream ink" stroke-width="2"/><path d="M434 202H560L560 214H732" class="ink" stroke-width="2.5" fill="none" style="stroke:#087F7C"/>
+  <text x="22" y="252" class="s">MIDI To → SEMPP MIDI CONTROL · CC envelopes or Program Change</text>
+</svg>
+<div class="cap">Each <b>locator</b> is a song in the setlist (its name is the song's name). On a MIDI <b>sections</b> track, one empty clip per section: its name is what you see in the section blocks. On other tracks (lyrics, cues…), each clip's name is the text shown in large type. The <b>tune</b> track sends the CCs to Auto-Tune.</div></div>
+<p>In <b>Settings → Ableton</b> you choose which tracks are read and which one holds the <b>song sections</b>.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section id="tune"><h2>TUNE tab</h2>
+<figure><div class="frame"><img src="img/manual/m-tune.jpg" alt="The plugin's TUNE tab" loading="lazy">
+  <span class="pin" style="left:9%;top:22%">1</span><span class="pin" style="left:32.2%;top:11.8%">2</span><span class="pin" style="left:53%;top:11.8%">3</span>
+  <span class="pin" style="left:32.2%;top:30%">4</span><span class="pin" style="left:3%;top:78.6%">5</span><span class="pin" style="left:27%;top:9.5%">6</span><span class="pin" style="left:22%;top:9.5%">13</span>
+  <span class="pin m" style="left:87.7%;top:10.5%">7</span><span class="pin m" style="left:92.2%;top:10.5%">8</span><span class="pin m" style="left:96.6%;top:10.5%">9</span>
+  <span class="pin m" style="left:80.4%;top:10%">10</span><span class="pin" style="left:6.5%;top:8%">12</span><span class="pin" style="left:4%;top:56%">11</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>The popsicle:</b> click it to engage or bypass Auto-Tune. With Auto-Tune active it shows its flavour; in bypass it turns almost grey and the stripes turn pink. The round button at the top left opens a strip of <b>flavours</b> (Jelly, Mint, Almond, Bonbon, Strawberry, Lemon, Watermelon and Tricolour): hover to try one on, click to keep it. It only changes the look. <span class="new">NEW</span></li>
+  <li><i>2</i><b>Key:</b> click it to choose on a piano, or drag, use the scroll wheel or the arrow keys. The <span class="k">CC</span> button assigns a MIDI control to it. <span class="new">NEW</span></li>
+  <li><i>3</i><b>Scale:</b> click it to choose from every scale in your Auto-Tune.</li>
+  <li><i>4</i><b>Dials:</b> Retune Speed, Humanize, Flex-Tune and Natural Vibrato.</li>
+  <li><i>5</i><b>Bottom panel</b>, with four buttons: <b>Activity</b> (the latest events: MIDI, iPads, Ableton and buttons), <b>Presets</b> (<a href="#presets">see presets</a>), <b>iPads</b> (who is connected right now, from which view and device, and whether a PIN is set and controls are active) or <b>MIDI channels</b> (each channel can control a different Auto-Tune or be forwarded to IAC buses: lights, visuals…). It remembers your last choice. <span class="new">NEW</span></li>
+  <li><i>6</i><b>Tabs:</b> TUNE, ABLETON and SETLIST.</li>
+  <li><i class="m">7</i><b>Live view:</b> opens or closes the floating window.</li>
+  <li><i class="m">8</i><b>Lock:</b> instantly locks the controls on every iPad.</li>
+  <li><i class="m">9</i><b>Settings:</b> bypass, controls, text, MIDI, iPad and general.</li>
+  <li><i class="m">10</i><b>Status:</b> three dots (Console, MIDI and Ableton). Green = fine. If one fails, its name appears in red; hover for details and click to open Settings. <span class="new">NEW</span></li>
+  <li><i>12</i><b>Logo:</b> opens the website, sempp.miguelsempere.es. <span class="new">NEW</span></li>
+  <li><i>13</i><b>Hints (?):</b> shows or hides every usage hint («Click to choose · or drag», «Click to toggle», the setlist drag handles…). Once you know your way around, turn it off for a cleaner screen; it is remembered. <span class="new">NEW</span></li>
+  <li><i>11</i><b>Input meter:</b> the signal entering the Console channel that holds Auto-Tune, before the fader and before Auto-Tune. <span class="new">NEW</span></li></ol>
+<h3>Input meter <span class="new">NEW</span></h3>
+<p>It measures what reaches the UAD Console channel that has Auto-Tune (for example channel 1 with the vocal mic), as it comes in: before the fader and before Auto-Tune. It ranges from −60 to 0 dB and the number is the peak of the last 2 seconds.</p>
+<table><tr><th>Colour</th><th>What it means</th></tr>
+<tr><td><b>Green</b></td><td>Good. Below −12 dB.</td></tr>
+<tr><td><b>Yellow</b></td><td>Hot. From −12 to −3 dB.</td></tr>
+<tr><td><b>Red</b></td><td>At the limit. Above −3 dB: lower the preamp gain.</td></tr>
+<tr><td><b>CLIP</b></td><td>The signal has clipped. The warning stays lit (even after it stops clipping) until you click it, so you never miss it.</td></tr>
+<tr><td><b>NO SIGNAL</b></td><td>Nothing has come in for 5 seconds while Ableton is playing: check the mic, the cable or the preamp.</td></tr></table>
+<p>It is also on the iPad, in the technician view. If there is no Auto-Tune in Console, the meter is hidden.</p>
+<h3>Choosing key and scale <span class="new">NEW</span></h3>
+<div class="duo"><figure><div class="frame"><img src="img/manual/m-pick-key.jpg" alt="Key picker: a piano with the twelve notes" loading="lazy"></div></figure>
+<figure><div class="frame"><img src="img/manual/m-pick-scale.jpg" alt="Scale picker: chips with every Auto-Tune scale" loading="lazy"></div></figure></div>
+<p>Click the key card and a piano appears: press a key and Auto-Tune changes instantly. The scale card shows every scale in your Auto-Tune, with its name as it appears in Auto-Tune.</p>
+<p>The lists of keys and scales <b>are read automatically</b> from your Auto-Tune, without pressing anything: as soon as Ableton is stopped and Auto-Tune is bypassed or has no vocal coming in (while reading, Auto-Tune steps through every key or scale, so this way nothing is heard). If you open the picker and the list is not there yet, it is read right then with Ableton stopped; if Ableton is playing, it is read when you stop. If Ableton starts or MIDI arrives while reading, everything is restored and it tries again later. It is remembered for good and, if you load a different Auto-Tune model, the lists are read again automatically. <b>Read again</b> is still in the picker in case you need it.</p>
+<div class="tip"><b>Settings → Tune → Bypass:</b> which Program Change or CC turns Auto-Tune off and on (by default PC 0 = active, PC 1 = off, PC 2 = toggle).</div>
+</section>
+
+<!-- ===================================================================== -->
+<section id="abl"><h2>ABLETON tab</h2>
+<p>What you need to watch during the show, in large type:</p>
+<figure><div class="frame"><img src="img/manual/m-abl.jpg" alt="The plugin's ABLETON tab" loading="lazy">
+  <span class="pin" style="left:14.8%;top:13.5%">1</span><span class="pin" style="left:45%;top:13.5%">2</span><span class="pin" style="left:65.1%;top:13.5%">3</span>
+  <span class="pin" style="left:82.6%;top:13.5%">4</span><span class="pin" style="left:24.2%;top:30.8%">5</span><span class="pin" style="left:11.3%;top:46.1%">6</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Song</b> that is playing, its number in the setlist, the tempo and the next one.</li>
+  <li><i>2</i><b>Left:</b> the song countdown; it blinks during the last 10 seconds.</li>
+  <li><i>3</i><b>Show:</b> what is left of the concert and the time it ends.</li>
+  <li><i>4</i>Current <b>time</b>.</li>
+  <li><i>5</i><b>Song sections:</b> grey = already played; outlined = the one playing. Click one to go to it (<a href="#partes">see how it comes in</a>).</li>
+  <li><i>6</i><b>Text</b> from the chosen tracks, as large as fits, with what comes next.</li></ol>
+</section>
+
+<!-- ===================================================================== -->
+<section id="barra"><h2>Bottom bar and transport</h2>
+<p>Always visible, in TUNE, ABLETON and SETLIST. The Click and Ref buttons only appear if you enable them (<a href="#mix">see how</a>):</p>
+<figure><div class="frame deck"><img src="img/manual/m-deck.jpg" alt="The plugin's transport bar, with Click and Ref" loading="lazy">
+  <span class="pin" style="left:3.4%;top:calc(100% - 17px)">1</span><span class="pin" style="left:9.4%;top:calc(100% - 17px)">2</span><span class="pin" style="left:15.4%;top:calc(100% - 17px)">3</span><span class="pin" style="left:23.2%;top:calc(100% - 17px)">4</span><span class="pin m" style="left:31.8%;top:calc(100% - 17px)">5</span><span class="pin m" style="left:38.4%;top:calc(100% - 17px)">6</span><span class="pin" style="left:49.9%;top:calc(100% - 17px)">7</span><span class="pin" style="left:62%;top:calc(100% - 17px)">8</span><span class="pin" style="left:72.5%;top:calc(100% - 17px)">9</span><span class="pin" style="left:89.1%;top:calc(100% - 17px)">10</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Previous song</b> in the setlist (if the current one has already moved on, it goes back to its start, as in Ableton).</li>
+  <li><i>2</i><b>Play / Stop.</b></li>
+  <li><i>3</i><b>Next song</b> in the setlist.</li>
+  <li><i>4</i>Ableton <b>Loop</b>: grey and OFF when disabled; turquoise, ON and with a spinning arrow when enabled.</li>
+  <li><i class="m">5</i><b>Click SOLO:</b> like the solo button on a desk. Grey, off: press it to leave only the click playing. Yellow, active: press it to release the solo. <span class="new">NEW</span></li>
+  <li><i class="m">6</i><b>Ref:</b> mutes or restores the Artist Ref track (coral, MUTE). <span class="new">NEW</span></li>
+  <li><i>7</i><b>Song</b> that is playing, with the icon of what it will do when it ends.</li>
+  <li><i>8</i>Time <b>left</b> in the song.</li>
+  <li><i>9</i><b>Bar and beat</b>, live.</li>
+  <li><i>10</i><b>Coming up:</b> the next section and in how many bars it starts, and the next song with the time remaining.</li></ol>
+<div class="tip"><b>Previous and next use Ableton's locator buttons</b> <span class="new">NEW</span> (the ◀ ▶ arrows next to «Set»): it is the same jump you would make in Ableton. While playing, Ableton waits for the next boundary of its global quantisation and shows in the Arrangement where it is going to jump. If you have reordered the setlist or removed songs from the show, SEMPP jumps to the right song in your setlist, in time, on its own.</div>
+
+<h3>Reading the bar counter</h3>
+<div class="vg" role="img" aria-label="Bar 45.2 with four dots: the first in coral, the second in turquoise and two empty">
+<svg viewBox="0 0 760 120">
+  <rect x="14" y="14" width="250" height="92" rx="14" class="paper ink" stroke-width="2.5"/>
+  <text x="32" y="38" class="l">BAR</text>
+  <text x="32" y="88" class="c" font-size="44">45.2</text>
+  <circle cx="160" cy="74" r="10" class="coral ink" stroke-width="2.5"/><circle cx="186" cy="74" r="10" class="mint ink" stroke-width="2.5" transform="scale(1)"/>
+  <circle cx="212" cy="74" r="10" class="cream ink" stroke-width="2.5"/><circle cx="238" cy="74" r="10" class="cream ink" stroke-width="2.5"/>
+  <text x="300" y="44" class="t"><tspan style="fill:#FF6666">45</tspan> = bar · <tspan style="fill:#087F7C">2</tspan> = beat within the bar</text>
+  <text x="300" y="70" class="s">One dot per beat (4 in 4/4). The first of each bar in coral;</text>
+  <text x="300" y="90" class="s">the current one hops, so you can follow it at a glance.</text>
+</svg></div>
+
+<h3>Play, Stop and cueing a song <span class="new">NEW</span></h3>
+<div class="vg" role="img" aria-label="Diagram: you choose a song, press Play, stop halfway and playback stays there; the next Play restarts that song">
+<svg viewBox="0 0 760 224">
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fink"/></marker></defs>
+  <rect x="20" y="70" width="210" height="44" rx="10" class="grey ink" stroke-width="2"/><text x="125" y="97" text-anchor="middle" class="t">Summer in Lisbon</text>
+  <rect x="234" y="70" width="290" height="44" rx="10" class="mint ink" stroke-width="2.5"/><text x="379" y="97" text-anchor="middle" class="t dk">Close to you</text>
+  <rect x="528" y="70" width="212" height="44" rx="10" class="grey ink" stroke-width="2"/><text x="634" y="97" text-anchor="middle" class="t">August moon</text>
+  <path d="M234 56V128" class="ink" stroke-width="3"/><path d="M234 56l14 7-14 7z" class="coral ink" stroke-width="1.5"/>
+  <circle cx="234" cy="34" r="14" class="coral ink" stroke-width="2.5"/><text x="234" y="39" text-anchor="middle" class="t w">1</text>
+  <text x="256" y="39" class="s">you choose the song (setlist, ◀ ▶ or iPad): it is cued at its start</text>
+  <path d="M240 150H400" class="ink" stroke-width="3" marker-end="url(#ar2)"/>
+  <circle cx="226" cy="150" r="13" class="mint ink" stroke-width="2.5"/><path d="M222 143l10 7-10 7z" class="fink"/>
+  <text x="300" y="140" class="s">2 · Play: it plays</text>
+  <rect x="404" y="140" width="20" height="20" rx="4" class="coral ink" stroke-width="2"/>
+  <path d="M404 182C360 200 280 200 240 176" class="ink dash" stroke-width="2.5" fill="none" marker-end="url(#ar2)"/>
+  <text x="436" y="156" class="s">3 · Stop</text>
+  <text x="400" y="194" class="t">4 · it stays where you stopped</text><text x="400" y="214" class="s">and the next Play restarts «Close to you»</text>
+</svg>
+<div class="cap">It works the same with the Play button in SEMPP, on the iPad, in Ableton or with the space bar. SEMPP's Play behaves like Ableton's space bar: if you stop halfway, the playhead does not move, it stays where you stopped; the next Play restarts the song (or the section you chose). If one song runs into the next on its own, Play starts the new one. <span class="new">NEW</span> If you move playback yourself in Ableton (clicking the timeline, the locators or your keyboard shortcuts), Ableton wins: even if you had chosen another song in SEMPP, Play starts where you left it. The same applies if your session does it: a MIDI clip that does «stop and next marker» at the end of a song leaves the next Play on that marker. <span class="new">NEW</span></div></div>
+</section>
+
+<!-- ===================================================================== -->
+<section id="setlist"><h2>SETLIST tab</h2>
+<figure><div class="frame"><img src="img/manual/m-set.jpg" alt="The plugin's SETLIST tab" loading="lazy">
+  <span class="pin" style="left:2.4%;top:23%">1</span><span class="pin" style="left:60%;top:23.5%">2</span><span class="pin" style="left:65.3%;top:23.5%">3</span>
+  <span class="pin" style="left:40%;top:35.9%">4</span><span class="pin" style="left:72%;top:30%">5</span><span class="pin" style="left:31%;top:13.5%">6</span><span class="pin" style="left:70.5%;top:87.4%">7</span>
+  <span class="pin m" style="left:69.2%;top:9%">8</span><span class="pin m" style="left:72%;top:46%">9</span><span class="pin m" style="left:13.5%;top:6%">10</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Reorder:</b> drag from the dots.</li>
+  <li><i>2</i><b>When this song ends:</b> Follow, Chain or Stop.</li>
+  <li><i>3</i><b>Eye:</b> removes it from the show; previous/next, timings and chaining skip it.</li>
+  <li><i>4</i><b>Double-click</b> a song to cue its start (while playing, it comes in on time).</li>
+  <li><i>5</i><b>Show left</b> and <b>full show</b>, with the time it ends. With hours (1:09:02) the figure adjusts so it is always shown in full.</li>
+  <li><i>6</i><b>When it ends, all songs:</b> the same mode for the whole setlist in one go.</li>
+  <li><i>7</i><b>Back to Ableton's order</b> (the Arrangement order).</li>
+  <li><i class="m">8</i><b>(i):</b> instructions for the setlist and the end-of-song modes. <span class="new">NEW</span></li>
+  <li><i class="m">10</i><b>View:</b> list, compact (in columns, for long setlists) or cards, as in the Finder. It is remembered. <span class="new">NEW</span></li>
+  <li><i class="m">9</i><b>Sections</b> of the song that is playing, as in ABLETON: click one to go to it (while playing it comes in on time; when stopped it is cued). At the top, how many bars are left until the next one. <span class="new">NEW</span></li></ol>
+<figure><div class="frame"><img src="img/manual/m-set-cards.jpg" alt="Setlist in card view" loading="lazy"></div><figcaption>Card view: number, name, start time, duration and what it does when it ends. Double-click to go to a song.</figcaption></figure>
+<h3>What happens when each song ends</h3>
+<div class="vg" role="img" aria-label="Diagram of the three end-of-song modes: Follow, Chain and Stop">
+<svg viewBox="0 0 760 250">
+  <defs><marker id="ar3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fink"/></marker></defs>
+  <rect x="14" y="16" width="116" height="40" rx="10" class="butter ink" stroke-width="2.5"/><text x="72" y="42" text-anchor="middle" class="t dk">→ Follow</text>
+  <rect x="150" y="16" width="250" height="40" rx="10" class="mint ink" stroke-width="2"/><text x="275" y="42" text-anchor="middle" class="t dk">Song A</text>
+  <rect x="404" y="16" width="200" height="40" rx="10" class="grey ink" stroke-width="2"/><text x="504" y="42" text-anchor="middle" class="s">whatever comes next</text>
+  <text x="616" y="34" class="s">Ableton follows</text><text x="616" y="50" class="s">its Arrangement</text>
+  <rect x="14" y="96" width="116" height="40" rx="10" class="sky ink" stroke-width="2.5"/><text x="72" y="122" text-anchor="middle" class="t dk">Chain</text>
+  <rect x="150" y="96" width="250" height="40" rx="10" class="mint ink" stroke-width="2"/><text x="275" y="122" text-anchor="middle" class="t dk">Song A</text>
+  <rect x="404" y="96" width="90" height="40" rx="10" class="grey ink" stroke-width="2" opacity=".45"/>
+  <rect x="510" y="96" width="94" height="40" rx="10" class="mint ink" stroke-width="2"/><text x="557" y="122" text-anchor="middle" class="t dk">Next</text>
+  <path d="M400 92C430 66 490 66 516 90" class="ink" stroke-width="2.5" fill="none" marker-end="url(#ar3)"/>
+  <text x="616" y="114" class="s">jumps to the next</text><text x="616" y="130" class="s">setlist song, in time</text>
+  <rect x="14" y="176" width="116" height="40" rx="10" class="pink ink" stroke-width="2.5"/><text x="72" y="202" text-anchor="middle" class="t dk">■ Stop</text>
+  <rect x="150" y="176" width="250" height="40" rx="10" class="mint ink" stroke-width="2"/><text x="275" y="202" text-anchor="middle" class="t dk">Song A</text>
+  <rect x="404" y="184" width="24" height="24" rx="5" class="coral ink" stroke-width="2"/>
+  <rect x="510" y="176" width="94" height="40" rx="10" class="paper ink dash" stroke-width="2.5"/><text x="557" y="202" text-anchor="middle" class="t">Next</text>
+  <path d="M432 196H504" class="ink dash" stroke-width="2" marker-end="url(#ar3)"/>
+  <text x="616" y="194" class="s">stops and cues</text><text x="616" y="210" class="s">the next one: Play</text>
+</svg>
+<div class="cap">If Ableton's <b>Loop</b> is closing the song, the loop wins: it will not jump until you turn it off. Durations marked <b>≈</b> are estimates; they correct themselves once the song has played once (SEMPP learns its tempo).</div></div>
+</section>
+
+<!-- ===================================================================== -->
+<section id="partes"><h2>Jumping to a section</h2>
+<p>From the ABLETON tab or from the iPad you can jump to any section (CHORUS, BRIDGE…):</p>
+<div class="vg" role="img" aria-label="Diagram of a quantised jump: you tap the section halfway through a bar and it comes in on the next bar, in time">
+<svg viewBox="0 0 760 210">
+  <defs><marker id="ar4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fink"/></marker></defs>
+  <text x="20" y="30" class="l">PLAYING</text>
+  <g><rect x="20" y="44" width="720" height="26" rx="6" class="cream"/>
+  <path d="M20 40v34M200 40v34M380 40v34M560 40v34M740 40v34" class="ink" stroke-width="2.5"/>
+  <text x="28" y="62" class="s">bar 12</text><text x="208" y="62" class="s">bar 13</text><text x="388" y="62" class="s">bar 14</text><text x="568" y="62" class="s">bar 15</text></g>
+  <rect x="20" y="78" width="360" height="34" rx="8" class="butter ink" stroke-width="2"/><text x="200" y="100" text-anchor="middle" class="t dk">VERSE</text>
+  <rect x="380" y="78" width="360" height="34" rx="8" class="pink ink" stroke-width="2"/><text x="560" y="100" text-anchor="middle" class="t dk">CHORUS</text>
+  <path d="M290 36V120" class="ink" stroke-width="3" style="stroke:#FF6666"/>
+  <circle cx="290" cy="136" r="13" class="coral ink" stroke-width="2.5"/><text x="290" y="141" text-anchor="middle" class="t w">1</text>
+  <text x="182" y="168" class="s">you tap CHORUS here</text>
+  <path d="M300 128C330 150 360 150 376 130" class="ink dash" stroke-width="2.5" fill="none" marker-end="url(#ar4)"/>
+  <circle cx="380" cy="136" r="13" class="mint ink" stroke-width="2.5"/><text x="380" y="141" text-anchor="middle" class="t dk">2</text>
+  <text x="400" y="168" class="s">it comes in on the next bar, in time</text>
+  <text x="20" y="198" class="s">How long it waits is set by Ableton's <tspan style="font-weight:800;fill:var(--ink)">global quantisation</tspan> (top left): 1 bar, 1/2, 1/4… With «None», it jumps immediately.</text>
+</svg>
+<div class="cap">With Ableton <b>stopped</b>, tapping a section only cues playback at its start, ready for Play.</div></div>
+<p><b>A section works like a marker.</b> <span class="new">NEW</span> It behaves like Ableton's space bar: after going to a section, when you stop, playback stays where you stopped and the next Play starts at that section. Play, Stop and Play again always start there. If you choose it with Ableton stopped, playback is cued at the section, ready for your Play. It stays that way until you choose another section or song, or until you move playback yourself in Ableton.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section id="mix"><h2>Click and Artist Ref <span class="new">NEW</span></h2>
+<p>Two buttons for rehearsal and the show: <b>CLICK</b> leaves only the click track playing (it <b>solos</b> it) and <b>REF</b> mutes or restores the artist's reference vocal track (<b>mute</b>). They are on the plugin's bottom bar and on the musical director's iPad.</p>
+<h3>Enabling them and choosing the tracks</h3>
+<figure class="phone-w"><div class="frame"><img src="img/manual/m-mix.jpg" alt="Settings, Click and Ref section" loading="lazy">
+  <span class="pin" style="left:3.5%;top:31.5%">1</span><span class="pin" style="left:36.5%;top:49.5%">2</span><span class="pin" style="left:3.5%;top:64.9%">3</span><span class="pin" style="left:36.5%;top:86.2%">4</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Settings → Ableton → Click and Artist Ref:</b> turns the buttons on.</li>
+  <li><i>2</i><b>Click track:</b> SEMPP reads the tracks in the set (audio and MIDI); choose the click.</li>
+  <li><i>3</i><b>Release the solo when going to a section</b> (on by default).</li>
+  <li><i>4</i><b>Artist Ref track:</b> the reference vocal.</li></ol>
+<h3>Rehearsing with the click soloed and jumping to a section</h3>
+<div class="vg" role="img" aria-label="With the click soloed, you tap a section; when the section comes in, in time, the solo is released and everything plays again">
+<svg viewBox="0 0 760 236">
+  <defs><marker id="ar6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fink"/></marker></defs>
+  <text x="20" y="26" class="l">CLICK</text>
+  <rect x="110" y="12" width="270" height="24" rx="6" class="butter ink" stroke-width="2"/><text x="185" y="29" text-anchor="middle" class="s dk" style="fill:#3F3F3F;font-weight:800">SOLO · click only</text>
+  <rect x="380" y="12" width="360" height="24" rx="6" class="mint ink" stroke-width="2"/><text x="560" y="29" text-anchor="middle" class="s dk" style="fill:#3F3F3F;font-weight:800">no solo: everything plays</text>
+  <text x="20" y="66" class="l">BAND</text>
+  <rect x="110" y="52" width="270" height="24" rx="6" class="cream" style="stroke:#BDB9B1;stroke-width:2;stroke-dasharray:5 4"/><text x="185" y="69" text-anchor="middle" class="s">silent</text>
+  <rect x="380" y="52" width="360" height="24" rx="6" class="pink ink" stroke-width="2"/><text x="560" y="69" text-anchor="middle" class="s dk" style="fill:#3F3F3F;font-weight:800">CHORUS</text>
+  <path d="M110 90v40M290 90v40M380 90v40M560 90v40M740 90v40" class="ink" stroke-width="2"/>
+  <text x="118" y="114" class="s">bar 12</text><text x="298" y="114" class="s">13</text><text x="388" y="114" class="s">bar 14</text><text x="568" y="114" class="s">15</text>
+  <path d="M290 6V140" class="ink" stroke-width="3" style="stroke:#FF6666"/>
+  <circle cx="290" cy="156" r="13" class="coral ink" stroke-width="2.5"/><text x="290" y="161" text-anchor="middle" class="t w">1</text>
+  <text x="150" y="190" class="s">you tap CHORUS</text>
+  <path d="M300 148C330 170 360 170 376 150" class="ink dash" stroke-width="2.5" fill="none" marker-end="url(#ar6)"/>
+  <circle cx="380" cy="156" r="13" class="mint ink" stroke-width="2.5"/><text x="380" y="161" text-anchor="middle" class="t dk">2</text>
+  <text x="400" y="190" class="s">the section comes in and the solo is released, together</text>
+  <text x="20" y="224" class="s">With Ableton stopped, tapping a section cues it and releases the solo at once. Changing song (setlist, ◀ ▶) leaves the solo alone.</text>
+</svg>
+<div class="cap">If you would rather keep the solo on, disable option 3.</div></div>
+<p>The buttons change <b>the moment</b> you press them and are confirmed by what Ableton reports. If you change the solo or mute of those tracks by hand in Ableton, the buttons follow. If a track is not in the set (for example, it has been renamed), its button turns grey with «?».</p>
+</section>
+
+<!-- ===================================================================== -->
+<section id="ipad"><h2>iPad</h2>
+<ol><li>Connect the Mac to the rack router (ideally by cable) and the iPad to that router's Wi-Fi. No internet needed.</li>
+<li>In <b>Settings → iPad</b>, scan the code for the view you want with the iPad camera.</li>
+<li>In Chrome or Safari: share → <b>Add to Home Screen</b>, to open it full screen like an app.</li>
+<li>Tap the screen once when it opens so it does not go to sleep (and set <b>Auto-Lock: Never</b> on the iPad).</li></ol>
+<h3>Musical director view</h3>
+<figure><div class="frame"><img src="img/manual/m-ipad.jpg" alt="The musical director iPad view" loading="lazy">
+  <span class="pin" style="left:4%;top:6%">1</span><span class="pin m" style="left:80.6%;top:8.1%">2</span><span class="pin" style="left:17.7%;top:32.6%">3</span>
+  <span class="pin" style="left:4%;top:64%">4</span><span class="pin" style="left:8.6%;top:83.4%">5</span><span class="pin" style="left:56.8%;top:32.6%">6</span><span class="pin" style="left:39.9%;top:50.6%">7</span>
+  <span class="pin m" style="left:25.6%;top:80.4%">8</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Tune:</b> press and hold to engage or bypass it.</li>
+  <li><i class="m">2</i><b>Bar and beat,</b> as in the plugin. <span class="new">NEW</span></li>
+  <li><i>3</i><b>Song,</b> countdown, next song and show. Tap it to open the <b>setlist</b>.</li>
+  <li><i>4</i><b>Transport:</b> previous, Play/Stop and next.</li>
+  <li><i>5</i>Ableton <b>Loop</b>.</li>
+  <li><i>6</i><b>Sections:</b> hold one to go to it. Each section has its own colour (light, so the text is always readable); the one playing fills up completely. At the top right, the next section and how many bars are left (in all three views). <span class="new">NEW</span></li>
+  <li><i>7</i><b>Text</b> from your tracks.</li>
+  <li><i class="m">8</i><b>Click</b> (solo) and <b>Artist Ref</b> (mute), if enabled. <span class="new">NEW</span></li></ol>
+<h3>Setlist on the iPad <span class="new">NEW</span></h3>
+<figure class="phone-w"><div class="frame"><img src="img/manual/m-ipad-setl.jpg" alt="Full-screen setlist on the iPad, with play on each song, stop on the one playing and the Pinned lock" loading="lazy">
+  <span class="pin" style="left:30%;top:75.9%">1</span><span class="pin m" style="left:86.5%;top:75.9%">2</span><span class="pin" style="left:3.3%;top:45.7%">3</span>
+  <span class="pin m" style="left:86.5%;top:45.7%">4</span><span class="pin m" style="left:73.5%;top:11.2%">5</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Tap the song</b> (or hold it, depending on the touch mode): it is cued at its start without playing. If something is already playing, it comes in on time.</li>
+  <li><i class="m">2</i><b>▶</b>: with Ableton stopped, <b>starts that song right away</b>; while playing, it comes in on time just like tapping it. Always available.</li>
+  <li><i>3</i>The song playing now, in turquoise; the next one, with a yellow border.</li>
+  <li><i class="m">4</i><b>■</b> on the song playing (yellow, blinking): <b>stops</b> Ableton. <span class="new">NEW</span></li>
+  <li><i class="m">5</i><b>Pin:</b> in yellow («Pinned»), the setlist does not close by itself when you choose or start a song. Each iPad remembers it. <span class="new">NEW</span></li></ol>
+<p>The list scrolls smoothly with your finger, even when it is long.</p>
+<p>Long names (songs, sections, keys and text) are always shown in full, on the iPad, in the plugin and in the live view: the type adjusts to fit and a word is never split in half.</p>
+<h3 id="tecnico">Technician view <span class="new">NEW</span></h3>
+<figure><div class="frame"><img src="img/manual/m-ipad-tec.jpg" alt="Technician view on the iPad: input meter, key, sections, technician notes, upcoming songs and the System and Vertical buttons" loading="lazy">
+  <span class="pin" style="left:22.5%;top:3.4%">1</span><span class="pin m" style="left:51%;top:7%">2</span><span class="pin" style="left:29%;top:30.5%">3</span>
+  <span class="pin m" style="left:30.5%;top:53.5%">4</span><span class="pin" style="left:61%;top:51.5%">5</span><span class="pin m" style="left:29%;top:80.5%">6</span>
+  <span class="pin" style="left:2.6%;top:85.5%">7</span><span class="pin m" style="left:17.6%;top:85.5%">8</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Input meter</b> of the Console channel with Auto-Tune: green, yellow from −12 dB, red from −3 dB, with the peak of the last 2 seconds. <b>CLIP</b> stays lit until you tap it; <b>NO SIGNAL</b> if nothing comes in while Ableton plays.</li>
+  <li><i class="m">2</i>Auto-Tune <b>key</b>.</li>
+  <li><i>3</i>Song <b>sections</b>, large, with the bars left until the next one.</li>
+  <li><i class="m">4</i><b>Now:</b> the technician note that applies right now, in large white type.</li>
+  <li><i>5</i><b>Coming up:</b> the next three notes, in light blue and smaller, with the bars remaining. The one approaching blinks.</li>
+  <li><i class="m">6</i><b>Upcoming songs</b> in the show (up to 4): their first note, duration and estimated start time.</li>
+  <li><i>7</i><b>System:</b> system status, connections and alarms, folded away. Tap it to open and × to close. If there is a problem, the button turns <b>coral</b> with the number of alerts.</li>
+  <li><i class="m">8</i><b>Vertical:</b> switches to the vertical view (and back). Each device remembers it; the first time, a screen taller than it is wide starts in vertical.</li></ol>
+<h3 id="presets">Tune presets <span class="new">NEW</span></h3>
+<p>A preset stores the key, the scale and the four Auto-Tune dials (Retune Speed, Humanize, Flex-Tune and Natural Vibrato) exactly as they are. Bypass is not stored: your Program Changes still control it. They live in the TUNE bottom panel → <b>Presets</b>.</p>
+<ul>
+  <li><b>Save current</b> creates a new preset from what is set now; you give it a name.</li>
+  <li><b>Click a card</b> = load that preset. The loaded one is shown in mint; if you then change something, it says <b>CHANGED</b>.</li>
+  <li><b>⋯</b> on each card: save the current settings into that preset, rename, <b>Songs…</b>, move it earlier or later, and delete (asks for a second click).</li>
+  <li><b>Songs…</b> (optional): when that song is reached, playing or cued, its preset loads. Each song can have one.</li>
+  <li><b>Via MIDI:</b> in Settings → Tune → Presets, choose a CC. Send it from Ableton through the SEMPP MIDI CONTROL output on a channel that controls Auto-Tune: the value is the preset number (the one on its card; 0 does nothing).</li>
+  <li>They are stored inside SEMPP, without files. To move them to another Mac or keep a backup: Settings → Tune → Presets → <b>Export</b> (creates a file in Downloads) and <b>Import</b> (adds them to the ones you already have).</li></ul>
+<h3 id="reloj-show">Show clock <span class="new">NEW</span></h3>
+<p>Counts show time (h:mm:ss) from the start of the concert. In <b>Settings → Ableton → Show clock</b>, choose the marker the show starts with (for example, the intro). When that marker starts playing, the clock starts by itself and appears in the plugin's bottom bar (<b>IN SHOW</b>) and on the song card of the director and technician iPads.</p>
+<ul>
+  <li>It keeps counting even if you stop Ableton between songs; if you close and reopen SEMPP, it carries on where it was.</li>
+  <li>If during the first 5 minutes you launch the start marker again from the top (a false start), it starts over. Pressing Play halfway through that song after a pause does not affect it.</li>
+  <li>Click <b>IN SHOW</b> on the bar (or go to Settings) to <b>Reset</b> or <b>Start now</b> by hand. No need the next day: a clock running for more than 8 hours is no longer shown and the marker starts it again.</li></ul>
+<h3 id="notas-tecnico">Technician notes <span class="new">NEW</span></h3>
+<p>A MIDI track in your set with one clip per cue, named after the cue: «Telecaster», «Capo 2», «Switch to acoustic», «Tune to D»… Place them in the Arrangement where each change happens. Choose the track in <b>Settings → Ableton → Technician notes</b>. Only the technician iPad sees it: not the plugin, the live view, the director or the band.</p>
+<ul>
+  <li><b>Now</b> is the last note of the song that has already started: it stays in view until the next one (the guitar in use, the capo in place).</li>
+  <li><b>Coming up</b> continues with the notes of the following setlist songs («At the start of Close to you»), so the guitar can be prepared in time.</li>
+  <li>When the number of bars you set in <b>Warn before</b> (4 by default) is reached, the approaching note is highlighted and its count blinks.</li>
+</ul>
+<p>After updating, restart Ableton: with the previous script only the notes of the song playing are shown.</p>
+<h3 id="tecnico-vertical">Vertical view <span class="new">NEW</span></h3>
+<div class="duo"><figure><div class="frame"><img src="img/manual/m-ipad-tec-vert.jpg" alt="Technician view in vertical on a phone" loading="lazy"></div></figure>
+<div><p>In all three views (director, technician and band), for a phone, an iPad held upright or a narrow window on the computer: everything stacked, full width, in the same order. In the technician view it is switched with the <b>Vertical</b> button next to System; in the director and band views, with the rotating-phone icon on the song card next to the setlist icon. Each device remembers it.</p>
+<p><b>To see an iPad view on the Mac itself</b>, open <b>http://127.0.0.1:47100/ipad?v=tec</b> (or <b>v=dm</b>, <b>v=banda</b>) in the browser. The address with the Mac's name shown in Settings → iPad also works.</p></div></div>
+<h3>Views</h3>
+<table><tr><th>View</th><th>For whom</th></tr>
+<tr><td><b>Musical director</b></td><td>Everything: tune, bar, song and timings, sections, text, transport, loop, Click and Artist Ref.</td></tr>
+<tr><td><b>Technician</b></td><td>Vocal input meter, key, song sections, technician notes, upcoming songs and system status (folded into the System button); with tune, bar, loop and setlist. Also in vertical.</td></tr>
+<tr><td><b>Band</b></td><td>Song and countdown in large type, bar, sections, text and loop. View-only by default.</td></tr></table>
+<h3 id="pin">Access PIN <span class="new">NEW</span></h3>
+<div class="duo"><figure><div class="frame"><img src="img/manual/m-pin.jpg" alt="Settings → iPad: access PIN with the switch, the PIN, Generate and Save PIN" loading="lazy"></div></figure>
+<figure><div class="frame"><img src="img/manual/m-ipad-pin.jpg" alt="The iPad asks for the PIN with a numeric keypad" loading="lazy"></div></figure></div>
+<p>Without a PIN, anyone on the same Wi-Fi can open the views. To lock them, go to <b>Settings → iPad → Access PIN</b>, type a PIN of 4 to 6 digits (or click <b>Generate</b>), click <b>Save PIN</b> and turn on <b>Ask for a PIN to enter from an iPad</b>.</p>
+<p>Each iPad asks for it <b>only once</b> on a numeric keypad and remembers it. If you change the PIN, every connected iPad goes back to the keypad and the new one must be entered. After <b>5 failed attempts</b>, that iPad waits 60 seconds. The plugin and the Mac's live view never ask for it. In the TUNE tab, the <b>iPads</b> panel tells you who is in.</p>
+<h3>Touch controls</h3>
+<p>In <b>Settings → iPad</b> you choose the mode: <b>Press and hold</b> (half a second, avoids accidental touches), <b>Single tap</b> (instant) or <b>Locked</b>. The lock on the top bar locks every iPad at once. You also choose what each view can control: only the permissions that view can use are offered (the setlist ▶ needs «Choose song» and «Play / Stop»).</p>
+<p>When you tap, the button responds <b>instantly</b> (it shrinks slightly and changes state) without waiting for Console or Ableton; if the command does not get through, it goes back and warns you. Anything a view cannot touch looks flat, without a shadow: it is view-only.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section id="directo"><h2>Live view</h2>
+<p>The screen button on the top bar opens a floating strip that is always in front (even over full-screen Ableton):</p>
+<figure><div class="frame"><img src="img/manual/m-live.jpg" alt="Live view with the text panel" loading="lazy">
+  <span class="pin" style="left:3%;top:10%">1</span><span class="pin" style="left:18.55%;top:46.8%">2</span><span class="pin" style="left:30.2%;top:46.8%">3</span>
+  <span class="pin" style="left:53.3%;top:46.8%">4</span><span class="pin m" style="left:84.2%;top:46.8%">5</span><span class="pin m" style="left:97.4%;top:40%">6</span>
+  <span class="pin" style="left:16.2%;top:64%">7</span><span class="pin" style="left:28.8%;top:64%">8</span></div></figure>
+<ol class="legend">
+  <li><i>1</i><b>Tune</b> active or bypassed.</li>
+  <li><i>2</i><b>Key.</b></li>
+  <li><i>3</i><b>Scale.</b></li>
+  <li><i>4</i><b>Retune</b> in milliseconds.</li>
+  <li><i class="m">5</i><b>Bar and beat,</b> with the tempo. <span class="new">NEW</span></li>
+  <li><i class="m">6</i><b>Loop,</b> with the arrow spinning when active. <span class="new">NEW</span></li>
+  <li><i>7</i><b>Marker</b> (song) and what comes next.</li>
+  <li><i>8</i><b>Text</b> from your tracks (optional panel).</li></ol>
+<h3>Click-through <span class="new">NEW</span></h3>
+<div class="vg" role="img" aria-label="Diagram: the live view sits in front of Ableton but clicks pass through to Ableton; the gear can be clicked and dragged, and holding Option moves the whole view">
+<svg viewBox="0 0 760 260">
+  <rect x="14" y="10" width="470" height="240" rx="14" class="grey ink" stroke-width="2.5"/>
+  <text x="32" y="38" class="l">ABLETON (UNDERNEATH)</text>
+  <rect x="32" y="54" width="434" height="26" rx="5" class="paper ink" stroke-width="1.5"/>
+  <rect x="32" y="86" width="434" height="26" rx="5" class="paper ink" stroke-width="1.5"/><rect x="180" y="88" width="120" height="22" rx="4" class="butter ink" stroke-width="2"/>
+  <rect x="32" y="118" width="434" height="26" rx="5" class="paper ink" stroke-width="1.5"/>
+  <rect x="44" y="160" width="410" height="66" rx="14" class="mint ink" stroke-width="3" opacity=".55"/>
+  <text x="249" y="200" text-anchor="middle" class="c dk" font-size="22" opacity=".85">live view (on top)</text>
+  <path d="M236 150L236 118" class="ink dash" stroke-width="2.5"/>
+  <path d="M236 182l0 22 6-6 5 11 4-2-5-11 8 0z" class="paper ink" stroke-width="2"/>
+  <circle cx="236" cy="104" r="9" class="coral" opacity=".9"/>
+  <rect x="420" y="166" width="26" height="26" rx="7" class="butter ink" stroke-width="2.5"/><text x="433" y="185" text-anchor="middle" class="t">⚙</text>
+  <text x="500" y="54" class="t">On (default)</text>
+  <text x="500" y="76" class="s">It sits in front but covers nothing: your</text>
+  <text x="500" y="94" class="s">clicks reach Ableton or whatever is underneath.</text>
+  <text x="500" y="130" class="t">The gear ⚙ (always visible)</text>
+  <text x="500" y="150" class="s">click or right-click: settings · drag: move</text>
+  <text x="500" y="190" class="t">Or hold</text>
+  <rect x="584" y="168" width="42" height="36" rx="8" class="cream ink" stroke-width="2.5"/><text x="605" y="193" text-anchor="middle" class="t">⌥</text>
+  <text x="500" y="222" class="s">and drag (with any button); right-click:</text>
+  <text x="500" y="240" class="s">settings. A dashed border appears.</text>
+</svg></div>
+<h3>Window settings</h3>
+<p>Click (or right-click) the gear: <b>opacity</b> (15 to 100 %), size, position on screen, text panel, stage mode (dark), flash on change, lock position and <b>click-through</b>. Without click-through, right-click works anywhere on the view and it can be dragged with any button. Opacity and click-through are also in the plugin: <b>Settings → Views</b>.</p>
+<div class="tip"><b>Why isn't a normal right-click enough with «click-through»?</b> Because in that mode macOS delivers no clicks at all to the view: that is what lets you use Ableton underneath. Capturing system-wide right-clicks would require the Accessibility permission, which an unsigned app would lose on every update. Hence the gear and the ⌥ key.</div>
+</section>
+
+<!-- ===================================================================== -->
+<section id="ajustes"><h2>Settings <span class="new">NEW</span></h2>
+<p>The settings button (top right) opens a panel with six tabs, from general to specific:</p>
+<figure class="phone-w"><div class="frame"><img src="img/manual/m-ajustes.jpg" alt="Settings tabs: General, Tune, MIDI, Ableton, Views and iPad" loading="lazy"></div></figure>
+<table><tr><th>Tab</th><th>What's inside</th></tr>
+<tr><td><b>General</b></td><td>Language, theme, <b>window size</b> (from Small to Extra large: the whole plugin larger or smaller, without moving anything; sizes that do not fit your screen are greyed out) <span class="new">NEW</span> and text size; updates and launch at login; help (manual, assistant, website, send report), log, stop and uninstall.</td></tr>
+<tr><td><b>Tune</b></td><td>Which Auto-Tune is controlled and the connection to UAD Console; bypass by CC and by Program Change; Tune presets.</td></tr>
+<tr><td><b>MIDI</b></td><td>The SEMPP port in Ableton, other inputs and what each CC moves (with Learn).</td></tr>
+<tr><td><b>Ableton</b></td><td>Script status, tracks whose text is read, the sections track, the <a href="#mix">Click and Artist Ref</a> buttons, the <a href="#reloj-show">show clock</a> and the <a href="#notas-tecnico">technician notes</a>.</td></tr>
+<tr><td><b>Views</b></td><td>Live view (open, click-through, opacity, text panel) and text viewer.</td></tr>
+<tr><td><b>iPad</b></td><td>Enable the iPad, <a href="#pin">access PIN</a> <span class="new">NEW</span>, touch mode, QR codes for each view with their permissions and who is connected.</td></tr></table>
+<p>Clicking a MIDI channel in the TUNE tab opens its own panel: which Auto-Tune it controls and which buses it forwards to.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section id="act"><h2>Updates</h2>
+<p>If the Mac has internet, SEMPP looks for a new version when it opens and every 6 hours (without internet, it tries again every 10 minutes). If there is one, a <b>window</b> tells you: under <b>What's new</b> you can read the new features, improvements and fixes, and choose <b>Update now</b> (it will ask for your Mac password and SEMPP restarts by itself) or <b>Later</b> (a small notice stays at the top and the window comes back the next time you open SEMPP). Before installing, the file is checked for damage. Afterwards, restart Ableton. <span class="new">NEW</span></p>
+</section>
+
+<!-- ===================================================================== -->
+<section id="problemas"><h2>Troubleshooting and help</h2>
+<table><tr><th>If this happens</th><th>Try this</th></tr>
+<tr><td>«No Console»</td><td>Open UAD Console with the Apollo switched on.</td></tr>
+<tr><td>«No Auto-Tune»</td><td>Load Auto-Tune on a Console channel. In Settings → Tune you can change the plugin name it looks for.</td></tr>
+<tr><td>The ABLETON indicator is grey</td><td>Choose SEMPP as a Control Surface and restart Ableton.</td></tr>
+<tr><td>Auto-Tune does not react to the clips</td><td>Enable <b>Track</b> on the SEMPP MIDI CONTROL output and check the track's <b>MIDI To</b>.</td></tr>
+<tr><td>I can't move the live view</td><td>Click-through is on: drag the gear, or hold <kbd>⌥</kbd> and drag it.</td></tr>
+<tr><td>The iPad disconnects</td><td>Mac on cable to the router, iPad on the router's Wi-Fi (5 GHz) and away from the venue's network.</td></tr>
+<tr><td>The setlist does not appear</td><td>Add locators to the Arrangement, one at the start of each song.</td></tr></table>
+<h3>Sending a report</h3>
+<p><b>Settings → General → Help → Send report.</b> Describe what happened in one line and press the button: SEMPP gathers the logs into a .zip and prepares an email in Mail with the file attached. If you don't use Mail, press <b>Save to Desktop</b> and send it however you like.</p>
+</section>
+
+<footer>SEMPP MIDI CONTROL · Jelly Vice · made by Miguel Sempere · <a href="https://sempp.miguelsempere.es/en/" style="color:inherit">sempp.miguelsempere.es</a></footer>
+</div>
+</body>
+</html>
