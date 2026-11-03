@@ -311,21 +311,34 @@
   }
   function segClass(db) { return db >= -3 ? 'r' : db >= -12 ? 'y' : 'g'; }
   function tickVu(ms) {
-    if (ms > vu.nt) {
+    var muted = ms < vu.muteUntil;
+    if (muted) vu.target = -60;
+    else if (ms > vu.nt) {
       var r = Math.random();
       vu.target = r < .12 ? -60 : r < .9 ? -28 + Math.random() * 20 : -4 + Math.random() * 3.5;
       vu.nt = ms + 120 + Math.random() * 380;
-      if (ms - vu.clipT > 9000 && Math.random() < .08) { vu.target = 0; vu.clipT = ms; vu.clip.classList.add('on'); setTimeout(function () { vu.clip.classList.remove('on'); }, 2600); }
+      if (ms - vu.clipT > 7000 && Math.random() < .1) { vu.target = 0; vu.clipT = ms; }
     }
-    vu.lv += (vu.target - vu.lv) * (vu.target > vu.lv ? .5 : .12);
-    var pk = vu.lv + 3 + Math.random() * 2;
-    if (pk > vu.hold || ms - vu.holdT > 2000) { vu.hold = pk; vu.holdT = ms; }
+    vu.lv += (vu.target - vu.lv) * (muted ? .35 : vu.target > vu.lv ? .5 : .12);
+    if (vu.lv > -0.6 && !vu.latched) { vu.latched = true; vu.clip.classList.add('on'); vu.clip.setAttribute('aria-pressed', 'true'); }
+    var pk = muted ? vu.lv : vu.lv + 3 + Math.random() * 2;
+    if (pk > vu.hold || ms - vu.holdT > 2000 || muted) { vu.hold = pk; vu.holdT = ms; }
     [vu.lv, pk].forEach(function (lv, ci) {
       vu.cols[ci].forEach(function (seg, i) {
         var db = -60 + i * 2;
-        var c = db <= lv ? segClass(db) : (ci === 1 && Math.abs(db - vu.hold) < 1 ? segClass(db) : '');
+        var c = db <= lv ? segClass(db) : (ci === 1 && !muted && Math.abs(db - vu.hold) < 1 ? segClass(db) : '');
         if (seg.className !== c) seg.className = c;
       });
+    });
+  }
+  if (vu.el) {
+    vu.muteUntil = 0; vu.latched = false;
+    vu.clip.addEventListener('click', function () {
+      var now = performance.now();
+      vu.latched = false; vu.clipT = now; vu.muteUntil = now + 500; vu.nt = now + 500;
+      vu.clip.classList.remove('on', 'reset'); void vu.clip.offsetWidth; vu.clip.classList.add('reset');
+      vu.clip.setAttribute('aria-pressed', 'false');
+      vu.el.classList.remove('dip'); void vu.el.offsetWidth; vu.el.classList.add('dip');
     });
   }
 

@@ -394,3 +394,21 @@ body[data-env=stage] [data-env=stage] .dt{box-shadow:6px 6px 0 rgba(0,0,0,.55),0
 .dbs{position:relative;height:16px;margin:8px 18px 0}
 .dbs span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
 .dbs span:first-child{transform:none}.dbs span:last-child{transform:translateX(-100%)}
+
+/* ===== botón CLIP funcional ===== */
+.cliprow{display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+.clipb{position:relative;display:inline-flex;align-items:center;gap:8px;margin:0;padding:10px 18px;border:2.5px solid var(--ink);border-radius:999px;background:#E8E5DE;color:var(--ink);
+  font:800 13px/1 "Hanken Grotesk";letter-spacing:.08em;cursor:pointer;box-shadow:3px 3px 0 rgba(0,0,0,.55);transition:background .12s,color .12s,transform .08s,box-shadow .08s;-webkit-tap-highlight-color:transparent}
+.clipb i{width:10px;height:10px;border-radius:50%;border:2px solid var(--ink);background:#CFCBC2;transition:background .12s,box-shadow .12s}
+.clipb:hover{background:#F2EFE8}
+.clipb:active{transform:translate(3px,3px);box-shadow:none}
+.clipb.on{background:var(--coral);color:#fff;animation:clipblink 1s steps(2) infinite}
+.clipb.on i{background:#fff;box-shadow:0 0 10px 2px rgba(255,255,255,.8)}
+@keyframes clipblink{50%{background:#C94848}}
+.clipb.reset{animation:clippress .5s cubic-bezier(.3,1.6,.5,1)}
+.clipb.reset::after{content:"";position:absolute;inset:-3px;border-radius:999px;border:3px solid var(--mint);animation:clipring .6s ease-out forwards;pointer-events:none}
+@keyframes clippress{0%{transform:scale(.88)}60%{transform:scale(1.06)}100%{transform:scale(1)}}
+@keyframes clipring{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(1.6)}}
+.vu.dip{animation:vudip .5s ease}
+@keyframes vudip{0%{filter:none}20%{filter:brightness(.85) saturate(.4)}80%{filter:brightness(.85) saturate(.4)}100%{filter:none}}
+.cliphint{font:600 13px/1.4 "Hanken Grotesk";color:var(--s-fg2,#55534F)}
