@@ -322,3 +322,37 @@
 .xp .appbox{transform-style:preserve-3d}
 #s-hero .hxsub{margin-top:8vh}
 @media (max-width:620px){.xstage{margin-top:7vh;height:30vh}}
+
+/* ===== v3 · tipografía editorial: Chewy solo en marca e interfaz del plugin ===== */
+:root{--display:"Hanken Grotesk",system-ui,-apple-system,sans-serif}
+.hx h1 .s,.big,.mid,h2,.steptxt h2,.plan h3,.plan .price,.stat b,.xlist b,.howlic b,.extras b,.dev .lbl,.mode b,.dawp .card h3,.wl h2,.daw button,.mini .mh span,.role h3,.steps b,.f h3,.card b.pt3,.fix,.pain b,.dk b,.about blockquote,.doc h1,.doc h2,.keyread,.knob b,.pstat .cnt,.pstat .bb,.sl .hd b,.pinpad b{
+  font-family:var(--display)!important;font-weight:800!important;letter-spacing:-.035em}
+.hx h1 .s{font-size:clamp(50px,8.6vw,124px);line-height:.92;letter-spacing:-.05em}
+.big{font-size:clamp(42px,6.6vw,96px);line-height:.95;letter-spacing:-.045em}
+.mid{font-size:clamp(32px,4.2vw,58px);line-height:1.02;letter-spacing:-.04em}
+.steptxt h2{font-size:clamp(30px,3.4vw,48px);line-height:1.04}
+h2{letter-spacing:-.04em}
+.kicker,.tag{letter-spacing:.16em}
+.lede{color:#55534F}
+.plan h3{font-size:26px;letter-spacing:-.02em}
+.plan .price{font-size:48px;letter-spacing:-.04em}
+.stat b{letter-spacing:-.05em}
+.xlist b{font-size:18px;letter-spacing:-.02em}
+.howlic b{font-size:18px;letter-spacing:-.02em}
+.howlic li::before,.steps .card::before,.xlist li i{font-family:var(--display);font-weight:800}
+.extras b{font-size:28px}
+.dev .lbl{font-size:18px;letter-spacing:-.02em}
+.mode b{font-size:16px;letter-spacing:-.01em}
+.daw button{font-size:17px;letter-spacing:-.01em;padding:13px 24px}
+.mini .mh span{font-size:13px;letter-spacing:.06em}
+.card b.pt3{display:block;font-size:20px;letter-spacing:-.02em;margin-bottom:6px}
+.keyread{font-size:22px;letter-spacing:-.02em}
+.pstat .cnt{font-size:22px;letter-spacing:-.01em}.pstat .bb{font-size:30px}
+.sl .hd b{font-size:20px;letter-spacing:-.02em}
+.launch{border-style:solid;background:var(--paper);font-weight:700}
+.hx .pill{font-weight:700;letter-spacing:.02em}
+.wl h2{text-shadow:none}
+.btn{letter-spacing:-.01em}
+.hxsub b{font-family:var(--display);font-weight:800;letter-spacing:-.035em;font-size:clamp(22px,2.4vw,32px)}
+.plan .price small{letter-spacing:0;font-weight:600}
+#s-xp .mid{font-size:clamp(28px,3.2vw,46px)}

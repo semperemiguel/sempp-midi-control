@@ -3,12 +3,12 @@
   if(!f)return;
   var t=f.querySelector('[name=t]');if(t)t.value=Date.now();
   var L=document.documentElement.lang==='en'?{
-    sending:'Sending…',ok:'Done! You are on the list. We will write once, when it is out.',
+    sending:'Sending…',ok:'Request received. You will get the launch notice by email.',
     bad:'Please check the email address and the consent box.',
-    fail:'Could not send it right now. Write to us at '}:{
-    sending:'Enviando…',ok:'¡Hecho! Ya estás en la lista. Te escribiremos una vez, cuando salga.',
+    fail:'The request could not be sent. Please contact '}:{
+    sending:'Enviando…',ok:'Solicitud registrada. Recibirás el aviso de lanzamiento por correo.',
     bad:'Revisa el correo y marca la casilla de consentimiento.',
-    fail:'No se ha podido enviar ahora mismo. Escríbenos a '};
+    fail:'No se ha podido enviar la solicitud. Contacta con '};
   var msg=f.querySelector('.msg'),btn=f.querySelector('button');
   f.addEventListener('submit',function(e){
     e.preventDefault();

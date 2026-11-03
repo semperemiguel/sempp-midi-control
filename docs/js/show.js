@@ -13,14 +13,14 @@
     song: 'Song', of: '/', later: 'next', parts: ['Intro', 'Verse', 'Pre-chorus', 'Chorus', 'Verse 2', 'Chorus 2', 'Bridge', 'Outro'],
     songs: ['Intro', 'Neon lights', 'Sleeping city', 'It all starts again', 'Undertow', 'Goodbye'],
     lines: ['Lights come on at midnight', 'and the city starts to sing', 'one more song before we go', 'hold on to this moment', 'we are dancing in the dark', 'never looking back again', 'it all starts again', 'one more time tonight'],
-    ends: 'ends at ', bars: ['in 3 beats', 'in 2 beats', 'in 1 beat', 'In!'], youare: 'YOU ARE ON',
+    ends: 'ends at ', bars: ['in 3 beats', 'in 2 beats', 'in 1 beat', 'Now'], youare: 'SECTION',
     key: 'Key', scales: ['Major', 'Minor', 'Chromatic', 'Dorian', 'Mixolydian'], on: 'ACTIVE', off: 'BYPASS',
     modes: { free: 'Follow', chain: 'Chain', stop: 'Stop' }, day: 'Friday'
   } : {
     song: 'Canción', of: '/', later: 'luego', parts: ['Intro', 'Estrofa', 'Pre', 'Estribillo', 'Estrofa 2', 'Estribillo 2', 'Puente', 'Final'],
     songs: ['Intro', 'Luces de neón', 'Ciudad dormida', 'Todo vuelve a empezar', 'Mar de fondo', 'Despedida'],
     lines: ['Se encienden las luces', 'y la ciudad empieza a cantar', 'una canción más antes de irnos', 'agárrate a este momento', 'bailamos a oscuras', 'sin mirar atrás', 'todo vuelve a empezar', 'una vez más esta noche'],
-    ends: 'acaba a las ', bars: ['entra en 3 tiempos', 'entra en 2 tiempos', 'entra en 1 tiempo', '¡Dentro!'], youare: 'ESTÁS EN',
+    ends: 'acaba a las ', bars: ['entrada en 3 tiempos', 'entrada en 2 tiempos', 'entrada en 1 tiempo', 'Entrada'], youare: 'SECCIÓN',
     key: 'Tonalidad', scales: ['Mayor', 'Menor', 'Cromática', 'Dórica', 'Mixolidia'], on: 'ACTIVO', off: 'BYPASS',
     modes: { free: 'Seguir', chain: 'Encadenar', stop: 'Parar' }, day: 'viernes'
   };
